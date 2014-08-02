@@ -1,0 +1,3 @@
+class StickiesController < ApplicationController
+
+end
