@@ -9,7 +9,8 @@ describe "Stick_Its", js: true do
     email: "charlyetran@gmail.com")}
 
   let(:board1) { Board.new(
-    title: 'Wonderfulness',
+    title: 'Wonderfulness',s
+    category:
     )}
 
   its "shows all Stick_Its when a board is visited" do
