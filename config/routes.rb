@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   get 'welcome/index'
   root to: 'welcome#index'
@@ -8,7 +9,10 @@ Rails.application.routes.draw do
   post '/login'  =>  'sessions#create'
   get  '/logout' =>  'sessions#destroy'
 
-  #Users
+
   resources :users
+  resources :stickies
+  resources :boards
+  delete 'boards/:id' => 'boards#destroy', :as => 'delete_board'
 
 end

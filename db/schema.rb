@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140802165502) do
+ActiveRecord::Schema.define(version: 20140802173625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: true do |t|
+    t.string   "title"
+    t.string   "categories"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.integer  "board_id"
@@ -26,8 +33,16 @@ ActiveRecord::Schema.define(version: 20140802165502) do
 
   create_table "collaborations", force: true do |t|
     t.integer  "board_id"
+    t.integer  "sticky_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stickies", force: true do |t|
+    t.string   "title"
+    t.text     "content"
     t.integer  "user_id"
-    t.string   "access"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
