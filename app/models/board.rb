@@ -5,5 +5,4 @@ class Board < ActiveRecord::Base
 
   validates :title, presence: true, on: :create
   validates :title, uniqueness: true, on: :create
-
 end
