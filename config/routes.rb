@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
   get 'welcome/index'
   root to: 'welcome#index'
