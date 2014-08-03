@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-  has_one :board
+  belongs_to :board
   validates :title, presence: true
 end
