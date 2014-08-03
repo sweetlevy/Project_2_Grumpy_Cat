@@ -1,7 +1,5 @@
 class BoardsController < ApplicationController
 
-<<<<<<< HEAD
-=======
   def index
     @boards = Board.all
   end
@@ -36,5 +34,4 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:title, :category)
   end
   
->>>>>>> f06e62e2102aff5a9fb8c3dd14298b5abbd8e7be
 end
