@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20140802173625) do
 
   create_table "collaborations", force: true do |t|
     t.integer  "board_id"
-    t.integer  "user_id"
-    t.string   "access"
+    t.integer  "sticky_id"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
