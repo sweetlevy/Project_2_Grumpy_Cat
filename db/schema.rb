@@ -16,18 +16,18 @@ ActiveRecord::Schema.define(version: 20140802165502) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "collaborations", force: true do |t|
+  create_table "categories", force: true do |t|
     t.integer  "board_id"
-    t.integer  "user_id"
-    t.string   "access"
+    t.integer  "sticky_id"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "products", force: true do |t|
+  create_table "collaborations", force: true do |t|
     t.integer  "board_id"
-    t.integer  "sticky_id"
-    t.string   "title"
+    t.integer  "user_id"
+    t.string   "access"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
