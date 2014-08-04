@@ -34,6 +34,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'shoulda-matchers', require: false
+  gem 'awesome_print'
 end
 
 # Use ActiveModel has_secure_password
