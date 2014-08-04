@@ -2,8 +2,8 @@ class Board < ActiveRecord::Base
   has_many :stickies, through: :categories, dependent: :destroy
   has_and_belongs_to_many :collaborations
 
-  belongs_to :creator, class_name: "User"
-  belongs_to :editor, class_name: "User"
+  belongs_to :creator, :foreign_key => "creator_id",class_name: "User"
+  belongs_to :editor, :foreign_key => "editor_id", class_name: "User"
   has_many :users, through: :collaborations
   has_many :categories
   has_many :collaborations, dependent: :destroy
