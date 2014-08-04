@@ -1,13 +1,15 @@
 class Sticky < ActiveRecord::Base
 
-  has_and_belongs_to_many :categories
-  has_one :board, through: :categories
-  has_many :children, class_name: "Sticky"
-  has_and_belongs_to_many :user
+  belongs_to :creator, class_name: "User"
+  belongs_to :editor, class_name: "User"
+  belongs_to :category
+  has_one :board, through: :category
 
+
+  belongs_to :category
 
   validates :title, :content, presence: true
-  validates :title, :content, uniqueness: true
-  # validates :position_x, uniqueness: true, scope: :posiiton_y
-  # validates :position_y, uniqueness: true, scope: :posiiton_x
+  validates_uniqueness_of :title, :content
+  validates_uniqueness_of :category_id, scope: [:position_x, :posiiton_y]
+
 end

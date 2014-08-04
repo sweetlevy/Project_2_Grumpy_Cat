@@ -3,7 +3,12 @@ class CreateStickies < ActiveRecord::Migration
     create_table :stickies do |t|
       t.string :title
       t.text :content
-      t.references :user
+      t.float :position_x
+      t.float :position_y
+      t.references :category
+      t.references :creator
+      t.references :editor
+
       t.timestamps
     end
   end
