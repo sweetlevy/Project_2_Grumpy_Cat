@@ -16,7 +16,7 @@ describe User do
   it "is expected not to allow users to have the same username" do
     sarit.save!
     g = User.new(
-      username: 'galit',
+      username: 'sarit',
       name: 'Galit Levy',
       email: "galit@hotmail.com",
       password: "123",

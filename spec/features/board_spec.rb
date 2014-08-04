@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe 'board' do
   let(:charlye) { User.new(
