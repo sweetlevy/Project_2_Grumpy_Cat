@@ -1,30 +1,16 @@
 require 'rails_helper'
 
 describe User do
-  let(:sarit) { User.new(
-    username: 'sarit',
-    name: "Sarit Levy",
-    email: "saritlevy@hotmail.com",
-    password: "123",
-    password_confirmation: "123"
-    )}
 
-  it "is valid with a username and password" do
-    expect(sarit).to be_valid
-  end
+  it { is_expected.to validate_presence_of :username }
+  it { is_expected.to validate_uniqueness_of :username }
+  it { is_expected.to validate_presence_of :name }
+  it { is_expected.to validate_presence_of :email }
+  it { is_expected.to validate_uniqueness_of :email }
+  it { is_expected.to validate_presence_of :password_digest }
+  it { should have_secure_password }
 
-  it "is expected not to allow users to have the same username" do
-    sarit.save!
-    g = User.new(
-      username: 'sarit',
-      name: 'Galit Levy',
-      email: "galit@hotmail.com",
-      password: "123",
-      password_confirmation: "123"
-      )
-    expect(g).to be_invalid
-  end
-
-
+  it { should have_many(:boards).through(:collaborations) }
+  it { should have_many(:stickies) }
 
 end
