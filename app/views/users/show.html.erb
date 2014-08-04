@@ -1,5 +1,7 @@
 <h2> Welcome <%= @user.name %> </h2>
 
 
+<!-- show boards if user has created boards or collab boards -->
+<%= link_to 'Create New Board', new_board_path %> | 
 <%= link_to 'Edit Your Account', edit_user_path(@user) %> |
 <%= link_to 'Delete Your Account', user_path(@user), method: :delete %>
