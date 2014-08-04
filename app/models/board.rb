@@ -1,6 +1,7 @@
 class Board < ActiveRecord::Base
 
   belongs_to :creator, class_name: "User"
+  belongs_to :editor, class_name: "User"
   has_many :users, through: :collaborations
   has_many :categories
   has_many :collaborations, dependent: :destroy
@@ -10,7 +11,6 @@ class Board < ActiveRecord::Base
   validates :title, uniqueness: true, on: :create
 
   # validates :category, presence: true, :string, default: "all"
-  validates :category, presence: true
-  validates :category, uniqueness: true
+  # validates :category, uniqueness: true
 
 end

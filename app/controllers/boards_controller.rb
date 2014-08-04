@@ -39,13 +39,13 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     # @user =
     # if current_user === @user
-    
+
   end
 
   private
 
   def  board_params
-    params.require(:board).permit(:title, :category)
+    params.require(:board).permit(:title)
   end
 
 end
