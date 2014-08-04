@@ -6,12 +6,16 @@ class BoardsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @board = Board.new
   end
 
   def create
+    @user = current_user
     @board = Board.new(board_params)
-    if @board.save!
+    if @board.save! && current_user
+      @board.creator_id = @user.id
+      @board.save!
       redirect_to(board_path(@board))
     else
       render(:new)
@@ -27,8 +31,11 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @board = Board.find(params[:id])
-    if @board.update!
+    if @board.update(board_params)
+      @board.editor_id = @user.id
+      @board.save
       redirect_to(board_path(@board))
     else
       render(:edit)
