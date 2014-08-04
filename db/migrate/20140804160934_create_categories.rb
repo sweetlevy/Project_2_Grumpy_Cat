@@ -1,9 +1,8 @@
-class Categories < ActiveRecord::Migration
+class CreateCategories < ActiveRecord::Migration
   def change
     create_table :categories do |t|
+      t.string :title
       t.references :board
-      t.references :sticky
-      t.string     :title
 
       t.timestamps
     end

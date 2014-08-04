@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803015155) do
+ActiveRecord::Schema.define(version: 20140804160934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: true do |t|
     t.string   "title"
+    t.integer  "creator_id"
+    t.integer  "editor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "categories", force: true do |t|
-    t.integer  "board_id"
-    t.integer  "sticky_id"
     t.string   "title"
+    t.integer  "board_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,15 +42,11 @@ ActiveRecord::Schema.define(version: 20140803015155) do
   create_table "stickies", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sticky_access_rights", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "sticky_id"
-    t.string   "access"
+    t.float    "position_x"
+    t.float    "position_y"
+    t.integer  "category_id"
+    t.integer  "creator_id"
+    t.integer  "editor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
