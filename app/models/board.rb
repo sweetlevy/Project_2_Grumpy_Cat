@@ -1,6 +1,7 @@
 class Board < ActiveRecord::Base
 
-  has_many :stickies, through: :categories, dependent: :destroy 
+  has_many :stickies, through: :categories, dependent: :destroy
+
   has_and_belongs_to_many :collaborations
   has_many :users, through: :collaborations
 
