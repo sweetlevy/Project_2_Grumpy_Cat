@@ -8,6 +8,7 @@ class Sticky < ActiveRecord::Base
 
   validates :title, :content, presence: true
   validates :title, :content, uniqueness: true
+
   validates_uniquess_of :category_id, scope: [:position_x, :posiiton_y]
-  validates_uniquess_of :category_id, scope: [:posiiton_y, :position_x]
+
 end
