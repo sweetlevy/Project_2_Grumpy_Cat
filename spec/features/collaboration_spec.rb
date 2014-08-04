@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe "collaboration" do
   let(:charlye) { User.new(
