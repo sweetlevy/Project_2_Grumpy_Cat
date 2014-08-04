@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  #duped route
-  get 'welcome/index'
   root to: 'welcome#index'
 
   #Sessions
@@ -13,7 +11,5 @@ Rails.application.routes.draw do
   resources :users
   resources :stickies
   resources :boards
-  #duped route
-  delete 'boards/:id' => 'boards#destroy', :as => 'delete_board'
 
 end
