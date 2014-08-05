@@ -14,13 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-// $(function() {
-//   console.log("loaded brah!");
-//
-// })
 
-// function createBoard () {
-//   $.post("/boards", {board: {
-//   title:
-//   }})
-// }
+
+$(function() {
+  console.log("loaded brah!");
+
+})

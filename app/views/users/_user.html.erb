@@ -1,0 +1,16 @@
+<%= div_for(user) do %>
+  <p class="user">
+    <%= user.username %>
+  </p>
+  <p class="user">
+    <%= user.name %>
+  </p>
+  <p class="user">
+    <%= user.email %>
+  </p>
+  <ul>
+    <% user.created_boards.each do |brd| %>
+    <li><%= link_to brd.title, board_path(brd), remote: true  %></li>
+    <% end %>
+  </ul>
+<% end %>

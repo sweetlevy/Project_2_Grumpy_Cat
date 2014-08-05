@@ -8,6 +8,7 @@ class BoardsController < ApplicationController
   def new
     @user = current_user
     @board = Board.new
+    render action: 'create'
   end
 
   def create
@@ -24,6 +25,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    render action: 'board'
   end
 
   def edit

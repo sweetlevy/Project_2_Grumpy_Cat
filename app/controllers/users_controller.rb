@@ -5,6 +5,13 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  def profile
+    @user = current_user
+
+  end
+  def profiles
+    @user = current_user
+  end
 
   def create
 
@@ -16,12 +23,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-    if current_user != @user
-      redirect_to user_path(current_user)
-    end
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  #   if current_user != @user
+  #     # redirect_to user_path(current_user)
+  #     render json: true
+  #   end
+  # end
 
   def edit
     @user = User.find(params[:id])

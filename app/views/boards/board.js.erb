@@ -1,0 +1,6 @@
+var container = $('#container').empty()
+container.empty()
+
+var boardHTML = $('<%= j(render @board) %>');
+
+container.append(boardHTML);

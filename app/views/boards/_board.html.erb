@@ -1,1 +1,46 @@
+<div class="board" >
+    <p>Title: <%= @board.title %></p>
+    <p>Board ID: <%= @board.id %></p>
+    <p>Creator: <%= @board.creator_id %></p>
+    <p>Editor: <%= @board.editor_id %></p>
+    <% case board.categories.length %>
+    <% when 1 %>
+      <% board.categories.each do |category| %>
+        <div class="one-category">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% when 2 %>
+      <% board.categories.each do |category| %>
+        <div class="two-categories">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% when 3 %>
+      <% board.categories.each do |category| %>
+        <div class="three-categories">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% when 4 %>
+      <% board.categories.each do |category| %>
+        <div class="four-categories">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
 
+      <!-- <% board.categories.each do |category| %>
+        <% category.stickies.each do |sticky| %>
+          <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+      <% end %> -->
+</div>
