@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :users
   resources :stickies
   resources :boards
+  resources :categories
 
 end
