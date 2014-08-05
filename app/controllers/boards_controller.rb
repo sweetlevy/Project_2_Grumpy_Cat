@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
 
   def index
-    @boards = Board.all.limit(5)
+    @boards = Board.all
     #snapshot index
   end
 

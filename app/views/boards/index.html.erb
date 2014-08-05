@@ -1,0 +1,15 @@
+<div class="board">
+<% @boards.each do |board| %>
+  <p class="title">
+  Title: <%= board.title %>
+  </p>
+
+  <p class="creatorId">
+  Creator: <%= board.creator_id %>
+  </p>
+
+  <p class="editorId">
+  Editor: <%= board.editor_id%>
+  </p>
+  <% end %>
+</div>
