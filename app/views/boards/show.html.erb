@@ -1,1 +1,6 @@
 <%= render partial: "board" %>
+
+<%= link_to 'Add A Category', new_category_path(:board_id => @board.id) %>
+
+<%= link_to 'Edit', edit_board_path(@board) %>
+<%= link_to 'Delete Board', boards_path, method: :delete %>
