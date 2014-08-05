@@ -25,6 +25,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @sticky = Sticky.new
     render action: 'board'
   end
 

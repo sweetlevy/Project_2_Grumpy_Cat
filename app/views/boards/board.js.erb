@@ -1,6 +1,8 @@
 var container = $('#container').empty()
 container.empty()
 
-var boardHTML = $('<%= j(render @board) %>');
+var boardHTML = $('<%= j(render @board) %>')
+var linkCreateSticky = $("<%= j(render 'stickies/form') %>")
 
 container.append(boardHTML);
+container.append(linkCreateSticky);
