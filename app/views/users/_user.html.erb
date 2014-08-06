@@ -8,9 +8,15 @@
   <p class="user">
     <%= user.email %>
   </p>
+  <p class="user">
+    <% user.collaborations.each do |collaboration| %>
+      <%= link_to collaboration.board.title, board_path(collaboration.board), remote: true %>
+    <% end %>
+  </p>
   <ul>
-    <% user.created_boards.each do |brd| %>
-    <li><%= link_to brd.title, board_path(brd), remote: true  %></li>
+    <% user.created_boards.each do |board| %>
+    <%= link_to board.title, board_path(board), remote: true  %> |
+    <%= (link_to 'Delete Board', board_path(board), remote: true, method: :delete) %>
     <% end %>
   </ul>
 <% end %>

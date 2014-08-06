@@ -1,0 +1,4 @@
+var container = $('#container');
+var userElement = $('<%= j(render @user) %>');
+container.empty();
+container.append(userElement);

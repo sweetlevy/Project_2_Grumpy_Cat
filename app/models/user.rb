@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   #adds new method for retrieving the boards edited by the user User.edited_boards => all boards that the user edited
   has_many :edited_boards, :foreign_key => "editor_id",
   :class_name => "Board"
-  has_many :collaborations, dependent: :destroy
+  has_many :collaborations
   has_secure_password
 
   has_many :boards, through: :collaborations

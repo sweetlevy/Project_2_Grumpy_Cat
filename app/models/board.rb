@@ -1,6 +1,7 @@
 class Board < ActiveRecord::Base
-  has_many :stickies, through: :categories
-  has_and_belongs_to_many :collaborations
+
+  has_many :stickies, through: :categories, dependent: :destroy
+  has_many :collaborations
   #points back to user model, so that the user_id is added to creator_id
   belongs_to :creator, :foreign_key => "creator_id",class_name: "User"
   #points back to user model, so that the user_id is added to editor_id
