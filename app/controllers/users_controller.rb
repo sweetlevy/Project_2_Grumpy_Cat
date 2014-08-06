@@ -5,6 +5,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
+  def search
+    @collaboration = Collaboration.new
+    @user = current_user
+    @user_search = User.where("LOWER(name) LIKE '%#{params[:search]}%'")
+    render action: 'search'
+
+  end
+
   def profile
     @user = current_user
 
