@@ -4,7 +4,11 @@ container.empty()
 var boardHTML = $('<%= j(render @board) %>')
 var linkCreateSticky = $("<%= j(render 'stickies/form') %>")
 var linkCreateCategory = $("<%= j(render 'categories/form') %>")
+var linkDeleteBoard = $("<%= j( link_to 'Delete Board', board_path(@board), remote: true, method: :delete ) %>")
+var linkEditBoard = $("<%= j( link_to 'Edit Board', edit_board_path(@board.id), remote: true) %>")
 
 container.append(boardHTML);
 container.append(linkCreateSticky);
 container.append(linkCreateCategory);
+container.append(linkDeleteBoard);
+container.append(linkEditBoard);
