@@ -1,5 +1,5 @@
 User.destroy_all
-# Board.destroy_all
+Board.destroy_all
 Category.destroy_all
 Sticky.destroy_all
 
@@ -16,6 +16,11 @@ board1 = Board.create({title: "One"})
 board2 = Board.create({title: "Two"})
 board3 = Board.create({title: "Three"})
 board4 = Board.create({title: "Four"})
+
+collab1= Collaboration.create(user_id: sarit.id, board_id: board1.id)
+collab2= Collaboration.create(user_id: sarit.id, board_id: board2.id)
+collab3= Collaboration.create(user_id: sarit.id, board_id: board3.id)
+
 
   board1.creator_id = sarit.id
   board2.creator_id = francis.id
@@ -101,27 +106,3 @@ sticky45 = Sticky.create({title: "Age" , content: "25", category_id: category12.
 sticky46 = Sticky.create({title: "Name", content: "Susanne", category_id: category12.id})
 sticky47 = Sticky.create({title: "Race", content: "Caucasian", category_id: category12.id})
 sticky48 = Sticky.create({title: "Location", content: "Detroit", category_id: category12.id})
-
-  # category1.stickies << sticky1 << sticky2 << sticky3 << sticky4
-  #
-  # category2.stickies << sticky5 << sticky6 << sticky7 << sticky8
-  #
-  # category3.stickies << sticky9 << sticky10 << sticky11 << sticky12
-  #
-  # category4.stickies << sticky13 << sticky14 << sticky15 << sticky16
-  #
-  # category5.stickies << sticky17 << sticky18 << sticky19 << sticky20
-  #
-  # category6.stickies << sticky21 << sticky22 << sticky23 << sticky24
-  #
-  # category7.stickies << sticky25 << sticky26 << sticky27 << sticky28
-  #
-  # category8.stickies << sticky29 << sticky30 << sticky31 << sticky32
-  #
-  # category9.stickies << sticky33 << sticky34 << sticky35 << sticky36
-  #
-  # category10.stickies << sticky37 << sticky38 << sticky39 << sticky40
-  #
-  # category11.stickies << sticky41 << sticky42 << sticky43 << sticky44
-  #
-  # category12.stickies << sticky45 << sticky46 << sticky47 << sticky48
