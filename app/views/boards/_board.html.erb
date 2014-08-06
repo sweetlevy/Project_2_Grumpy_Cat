@@ -3,6 +3,7 @@
     <p class="board_id"><%= @board.id %></p>
     <p class="creator"><%= @board.creator_id %></p>
     <p class="editor"><%= @board.editor_id %></p>
+
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>
@@ -37,10 +38,4 @@
         </div>
       <% end %>
     <% end %>
-
-      <!-- <% board.categories.each do |category| %>
-        <% category.stickies.each do |sticky| %>
-          <div class="sticky"><%= sticky.title %></div>
-        <% end %>
-      <% end %> -->
 </div>
