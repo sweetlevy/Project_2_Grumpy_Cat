@@ -1,5 +1,5 @@
 User.destroy_all
-Board.destroy_all
+# Board.destroy_all
 Category.destroy_all
 Sticky.destroy_all
 
@@ -30,6 +30,7 @@ category5 = Category.create({title: "To-Do", board_id: board2.id})
 category6 = Category.create({title: "In Progess", board_id: board2.id})
 category7 = Category.create({title: "Testing", board_id: board2.id})
 category8 = Category.create({title: "Done", board_id: board3.id})
+category9 = Category.create({title: "Whatever", board_id: board3.id})
 category10 = Category.create({title: "Research", board_id: board3.id})
 category11 = Category.create({title: "Presentation", board_id: board4.id})
 category12 = Category.create({title: "Case Study", board_id: board4.id})
