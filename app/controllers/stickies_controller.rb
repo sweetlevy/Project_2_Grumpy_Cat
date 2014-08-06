@@ -18,8 +18,8 @@ class StickiesController < ApplicationController
     if @sticky.save! && current_user
       @sticky.creator_id = @user.id
       @sticky.save!
-      redirect_to(sticky_path(@sticky))
-      # redirect(board_path(@board))
+      render action: board_path(@sticky.creator_id)
+
     else
       render(:new)
     end

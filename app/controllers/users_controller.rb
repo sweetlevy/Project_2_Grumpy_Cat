@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @collaboration = Collaboration.new
     @user = current_user
     @user_search = User.where("LOWER(name) LIKE '%#{params[:search]}%'")
-    binding.pry
+
 
   end
 
