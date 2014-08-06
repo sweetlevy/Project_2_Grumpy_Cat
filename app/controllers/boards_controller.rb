@@ -47,6 +47,7 @@ class BoardsController < ApplicationController
 
   def destroy
     @board = Board.find(params[:id])
+    render(:user)
     # @user =
     # if current_user === @user
 

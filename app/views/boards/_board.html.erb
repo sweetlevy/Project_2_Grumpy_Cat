@@ -1,7 +1,9 @@
 <div class="board" >
-    <p>Title: <%= @board.title %></p>
-    <p>Creator: <%= @board.creator_id %></p>
-    <p>Editor: <%= @board.editor_id %></p>
+    <p class="title"><%= @board.title %></p>
+    <p class="board_id"><%= @board.id %></p>
+    <p class="creator"><%= @board.creator_id %></p>
+    <p class="editor"><%= @board.editor_id %></p>
+
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>
