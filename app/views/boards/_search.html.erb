@@ -1,6 +1,7 @@
 <div id='search-div'>
 <%= form_tag(users_search_path, remote: true, method: :get) do %>
-  <p><%= text_field_tag :search %><p>
+  <p><%= text_field_tag :search %></p>
+  <p><%= hidden_field_tag :board_id, @board.id %></p>
   <p><%= submit_tag 'Search By Name' %></p>
 <% end %>
 </div>

@@ -4,9 +4,8 @@
       <p><%= user.name %>
       <%= form_for @collaboration, remote: true do |f| %>
         <%= f.hidden_field :board_id, value: params[:board_id] %>
-        <%= f.hidden_field :user_id, value: params[:user_id] %>
-        <%= f.submit '+ '%>
-        binding.pry
+        <%= f.hidden_field :user_id, value: user.id %>
+        <%= f.submit '+ ' %>
       <% end %>
       </p>
     <% end %>
