@@ -1,0 +1,16 @@
+<div class="user">
+  <p>
+    <% @user_search.each do |user| %>
+      <p><%= user.name %>
+      <%= form_for @collaboration, remote: true do |f| %>
+        <%= f.hidden_field :board_id, value: params[:board_id] %>
+        <%= f.hidden_field :user_id, value: params[:user_id] %>
+        <%= f.submit '+ '%>
+      <% end %>
+      </p>
+    <% end %>
+  </p>
+
+
+
+</div>

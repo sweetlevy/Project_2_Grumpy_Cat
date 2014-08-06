@@ -1,8 +1,8 @@
 class CollaborationsController < ApplicationController
 
   def new
-    @colab = Collaboration.new
-    render action:
+    @collaboration = Collaboration.new
+
   end
 
   def create
@@ -13,6 +13,7 @@ class CollaborationsController < ApplicationController
     else
       render :back
     end
+
   end
 
   def destroy
@@ -22,5 +23,5 @@ class CollaborationsController < ApplicationController
   private
   def collaboration_params
     params.require(:collaboration).permit(:board_id, :user_id)
-
+  end
 end

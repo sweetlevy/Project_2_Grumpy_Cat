@@ -1,6 +1,6 @@
 
 console.log('hey');
-var userNAME = '<%= j(render @user_search) %>'
+var userNAME = '<%= j(render "user_search") %>'
 if (<%= @user_search.count %> === 0 || <%= @user_search.nil? %>) {
   $('#container .user').remove();
   $('<div><p>No results found</p></div>').appendTo($('#container'))
