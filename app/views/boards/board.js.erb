@@ -2,7 +2,7 @@ var container = $('#container')
 container.empty()
 var searchHTML = $("<%= j(render 'search') %>")
 var boardHTML = $('<%= j(render @board) %>')
-var linkCreateSticky = $("<%= j(render 'stickies/form') %>")
+var linkCreateSticky = $("<%= j(render partial: 'stickies/form', locals: {board_id: @board.id}) %>")
 var linkCreateCategory = $("<%= j(render 'categories/form') %>")
 
 

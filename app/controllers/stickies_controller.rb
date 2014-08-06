@@ -13,13 +13,14 @@ class StickiesController < ApplicationController
   def create
     @categories = Category.all
     @user = current_user
-    # @board = board.find(params[:id])
     @sticky = Sticky.new(sticky_params)
+    @board = Board.find(params[:sticky][:board_id])
     if @sticky.save! && current_user
       @sticky.creator_id = @user.id
       @sticky.save!
-      render action: board_path(@sticky.creator_id)
-
+      respond_to do |format|
+        format.js
+      end
     else
       render(:new)
     end
