@@ -6,9 +6,9 @@ class CollaborationsController < ApplicationController
   end
 
   def create
-    @user = current_user
+
     @collaboration = Collaboration.new(collaboration_params)
-    if @collaboration.save && @user
+    if @collaboration.save
       redirect_to(board_path(@collaboration.board_id))
     else
       render :back
