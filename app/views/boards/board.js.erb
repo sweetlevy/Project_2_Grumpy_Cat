@@ -3,6 +3,8 @@ container.empty()
 
 var boardHTML = $('<%= j(render @board) %>')
 var linkCreateSticky = $("<%= j(render 'stickies/form') %>")
+var linkCreateCategory = $("<%= j(render 'categories/form') %>")
 
 container.append(boardHTML);
 container.append(linkCreateSticky);
+container.append(linkCreateCategory);

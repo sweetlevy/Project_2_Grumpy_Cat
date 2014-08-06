@@ -1,6 +1,5 @@
 <div class="board" >
     <p>Title: <%= @board.title %></p>
-    <p>Board ID: <%= @board.id %></p>
     <p>Creator: <%= @board.creator_id %></p>
     <p>Editor: <%= @board.editor_id %></p>
     <% case board.categories.length %>
@@ -37,10 +36,4 @@
         </div>
       <% end %>
     <% end %>
-
-      <!-- <% board.categories.each do |category| %>
-        <% category.stickies.each do |sticky| %>
-          <div class="sticky"><%= sticky.title %></div>
-        <% end %>
-      <% end %> -->
 </div>

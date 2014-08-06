@@ -5,16 +5,16 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
   def profile
     @user = current_user
-
   end
+
   def profiles
     @user = current_user
   end
 
   def create
-
     @user = User.new(user_params)
     if @user.save
       redirect_to(login_path)
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to (user_path(@user))
+      render :profile
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     session[:current_user] = nil
-    redirect_to root_path
+    redirect_to login_path
   end
 
   def user_params
