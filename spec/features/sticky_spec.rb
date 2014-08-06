@@ -44,5 +44,5 @@ end
 describe "#update_sticky", js: true do
 end
 
-describe "#delete_sticky" js: true do
+describe "#delete_sticky", js: true do
 end
