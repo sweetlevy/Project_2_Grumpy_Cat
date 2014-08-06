@@ -46,11 +46,10 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @board = Board.find(params[:id])
-    render(:user)
-    # @user =
-    # if current_user === @user
-
+    @board.destroy
+    render action: @user
   end
 
   private

@@ -10,8 +10,6 @@ class UsersController < ApplicationController
     @collaboration = Collaboration.new
     @user = current_user
     @user_search = User.where("LOWER(name) LIKE '%#{params[:search]}%'")
-    binding.pry
-
   end
 
   def profile
@@ -45,11 +43,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      render :profile
-    else
-      render :edit
-    end
+    @user.update(user_params)
   end
 
   def destroy
