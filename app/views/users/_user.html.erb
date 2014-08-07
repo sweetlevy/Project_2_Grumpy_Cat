@@ -10,7 +10,7 @@
   </p>
   <ul>
     <% user.created_boards.each do |brd| %>
-    <li><%= link_to brd.title, board_path(brd), remote: true  %></li>
+    <li><%= link_to brd.title, board_path(brd), remote: true, :board_id => brd.id  %></li>
     <% end %>
   </ul>
 <% end %>
