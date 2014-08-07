@@ -24,15 +24,16 @@ $(document).ready(function() {
 
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
-  // $('body').on('click', '.input', showInput);
+
   $('#container').on('click', '.board-title',editTitle);
   $('body').on('keypress', '.edit-title',
-   function(event) {
-    var theActualInputBox = this;
-    if (event.which === 13) {
-      updateTitle.call(theActualInputBox);
-    }
-  });
+     function(event) {
+      var theActualInputBox = this;
+      if (event.which === 13) {
+        updateTitle.call(theActualInputBox);
+      }
+      }
+  );
 });
 
 function sortable() { console.log("hello");
