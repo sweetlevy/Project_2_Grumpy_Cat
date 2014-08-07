@@ -9,29 +9,29 @@ describe "Sticky", js: true do
     email: "charlyetran@gmail.com")}
 
   let(:board1) { Board.new(
-    title: 'Wonderfulness',
+    title: 'One',
     creator_id: charlye.id)}
 
   let(:category1) { Category.new(
-    title: 'rhyme',
+    title: 'Pain Points',
     board_id: board1.id)}
 
   let(:sticky1) { Sticky.new(
-    title: 'Green Eggs and Ham',
-    content: 'Sam I am loves green eggs and ham',
+    title: 'Age',
+    content: '28',
     category_id: category1.id)}
 
   it "shows sticky info when it is clicked" do
     visit(sticky_path(sticky1))
-    expect(page).to have_content 'Green Eggs and Ham'
+    expect(page).to have_content '28'
   end
 
-  xit "should have a link to edit the note if user has edit or full access" do
+  it "should have a link to edit the note if user has edit or full access" do
   end
 
-  xit "shows all Stick_Its when a board is visited" do
+  it "shows all stickies when a board is visited" do
     visit(board_path(board1))
-    expect(page).to have_content 'Green Eggs and Ham'
+    expect(page).to have_content 'Caucasian'
   end
 end
 

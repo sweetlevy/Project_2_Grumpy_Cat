@@ -9,6 +9,16 @@ class UsersController < ApplicationController
   def search
     @collaboration = Collaboration.new
     @user = current_user
+  end
+
+  # def search
+  #   @collaboration = Collaboration.new
+  #   @user = current_user
+  #   @user_search = User.where("LOWER(name) LIKE '%#{params[:search].downcase}%'")
+  # end
+  def search_results
+    @collaboration = Collaboration.new
+    @user = current_user
     @user_search = User.where("LOWER(name) LIKE '%#{params[:search].downcase}%'")
   end
 
@@ -28,14 +38,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  # def show
-  #   @user = User.find(params[:id])
-  #   if current_user != @user
-  #     # redirect_to user_path(current_user)
-  #     render json: true
-  #   end
-  # end
 
   def edit
     @user = User.find(params[:id])

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "the signup process", js: true, :type => :feature do
   before :each do
-    User.make(
-    :username => 'User1',
+    User.create(
+    :username => 'Sarit',
     :password => '123',
     :password_confirmation => '123')
   end
@@ -11,7 +11,7 @@ describe "the signup process", js: true, :type => :feature do
   it "signs me in" do
     visit '/sessions/new'
     within("#session") do
-      fill_in 'Username', :with => 'User1'
+      fill_in 'Username', :with => 'Sarit'
       fill_in 'Password', :with => '123'
     end
     click_button 'Log in'
