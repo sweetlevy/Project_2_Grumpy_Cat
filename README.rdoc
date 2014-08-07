@@ -10,30 +10,34 @@ was inspired by the colorful post-it notes posted on white walls and used to org
 The current features of this application include:
 
 - User can sign up for an account or log-in to their Stick-IT account
+
 - When logged-in:
     - a user can create a board and add stick-its to it
-    - a user can view the boards s/he created with the stick-its that are attached to those boards
-    - a user can add collaborators as team members so that the user and collaborators can work on the board together and add stick-its to it
+    - a user can view the boards s/he created with the stick-its
+      that are attached to those boards
+    - a user can add collaborators as team members so that the user
+      and collaborators can work on the board together and add stick-its to it
     - a user can add categories and colors to the stick-its to help organize them
-    - a user can move stick-its from one category area to another and the color of the stick-it will change and match the color of its new category
+    - a user can move stick-its from one category area to another and the color
+      of the stick-it will change and match the color of its new category
     - a user can delete stick-its
     - a user can delete a board
     - a user can edit their account information
     - a user can delete their Stick-IT account
 
-________________________________________________________________________
+*********************************************************
 
 Link to the Heroku-hosted site for this application:
 
 http://stckit.herokuapp.com/
 
-_________________________________________________________________________
+*********************************************************
 
 Link to Trello board containing user stories for this application:
 
 https://trello.com/b/AoYD3TK6/grumpycats-stick-it
 
-_________________________________________________________________________
+*********************************************************
 
 Link to this application's ERD (Entity Relationship Diagram) on lucidchart.com:
 
