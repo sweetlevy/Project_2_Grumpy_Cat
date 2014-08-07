@@ -50,6 +50,7 @@ function expandBoard() {
   var span = $('<span class="retract">').text(' / Show All Categories');
   var title = $('.container-name');
   title.append(span);
+  $('body').off('click', '.sticky-container');
 }
 
 function retractBoard() {
