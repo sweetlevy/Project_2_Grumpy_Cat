@@ -25,7 +25,14 @@ $(document).ready(function() {
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
   // $('body').on('click', '.input', showInput);
-
+  $('#container').on('click', '.board-title',editTitle);
+  $('body').on('keypress', '.edit-title',
+   function(event) {
+    var theActualInputBox = this;
+    if (event.which === 13) {
+      updateTitle.call(theActualInputBox);
+    }
+  });
 });
 
 function sortable() { console.log("hello");
@@ -67,4 +74,36 @@ function retractBoard() {
 
   var $span = $('.retract');
   $span.remove();
+}
+
+function editTitle() {
+  var titleH3 = $(this);
+  var id = titleH3.data('id');
+  var editSpan = $('<span class="edit">');
+  var editInput = $('<input type="text" class="edit-title"' +  'data-id=' + id + '>');
+
+  editInput.val(titleH3.text());
+
+  editSpan.append(editInput);
+
+  titleH3.replaceWith(editSpan);
+}
+
+function updateTitle() {
+  var headerElement = $(this).closest('header');
+  var id = $('.edit-title').data('id');
+  console.log(id);
+  var newTitle = headerElement.find('.edit-title').val();
+  var params = {
+    board: {
+      title: newTitle
+    }
+  };
+  $.ajax('/boards/' + id, { type: "PUT", data: params })
+    .done(function(board) {
+      // headerElement.remove();
+      $('header .edit').replaceWith($('<h3 data-id=' + id + '> ' + newTitle + '</h3>'))
+      console.log('done');
+    //   $('<h3>' + @board.title + '</h3>').appendTo($('#container header'));
+    });
 }

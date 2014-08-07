@@ -43,7 +43,7 @@ class BoardsController < ApplicationController
     if @board.update(board_params)
       @board.editor_id = @user.id
       @board.save
-      redirect_to(board_path(@board))
+      render json: @board
     else
       render(:edit)
     end

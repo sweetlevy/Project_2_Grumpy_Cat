@@ -1,6 +1,6 @@
 <header>
   <h2><%= link_to @user.username, users_profiles_path(@user), remote: true %></h2>
-  <h3><%= @board.title %></h3>
+  <h3 class="board-title" data-id=<%= @board.id %> ><%= @board.title %></h3>
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
     <span><%= link_to "+ new sticky", new_sticky_path, remote:true%></span>

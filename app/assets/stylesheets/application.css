@@ -67,6 +67,11 @@ header h2 {
 header h3 {
   text-align: center;
 }
+header .edit {
+  position: absolute;
+  left: 25em;
+  outline: 0;
+}
 header nav {
   position: absolute;
   top: 10px;
