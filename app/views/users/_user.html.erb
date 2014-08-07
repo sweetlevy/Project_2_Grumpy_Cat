@@ -2,8 +2,8 @@
   <h2><%= user.username %></h2>
   <span class="new-board"><%= link_to "+ new board", new_board_path, remote: true%></span>
   <nav id="board-nav">
-    <span>+ Edit</span>
-    <span>+ Logout</span>
+    <span><%= link_to "+ Edit", edit_user_path(user), remote:true%></span>
+    <span><%= link_to "+ Logout", logout_path%></span>
   </nav>
 </header>
 
