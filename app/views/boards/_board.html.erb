@@ -11,7 +11,7 @@
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>
-        <section class="one-full-board">
+        <section id="sc1" class="one-full-board">
           <h3 class="container-name">Stickies</h3>
         <% category.stickies.each do |sticky| %>
             <div class="sticky"><%= sticky.title %></div>
@@ -76,7 +76,7 @@
         <% if board.categories.find_index(category) == 0 %>
           <div id='one'>
             <h3 class="container-name">Stickies</h3>
-            <div class="sticky-container">
+            <div id="sc1" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
             <% end %>
@@ -85,7 +85,7 @@
         <% elsif board.categories.find_index(category) == 1 %>
           <div id='two'>
             <h3 class="container-name">Category Name</h3>
-            <div class="sticky-container">
+            <div id="sc2" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
             <% end %>
@@ -94,7 +94,7 @@
         <% elsif board.categories.find_index(category) == 2 %>
           <div id='three'>
             <h3 class="container-name">Category Name</h3>
-            <div class="sticky-container">
+            <div id="sc3" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
             <% end %>
@@ -103,7 +103,7 @@
         <% else %>
           <div id='four'>
             <h3 class="container-name">Category Name</h3>
-            <div class="sticky-container">
+            <div id="sc4" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
             <% end %>
