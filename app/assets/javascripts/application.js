@@ -23,7 +23,6 @@ $(document).ready(function() {
 
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
-  $('body').on('click', '.input', showInput);
 
 });
 
@@ -49,10 +48,20 @@ function retractBoard() {
 
   var $containerDiv = $this.parent().parent();
   $containerDiv.siblings().show();
-  $containerDiv.attr('id');
-  // if ($containerDiv.attr)
+  var $idValue = $containerDiv.children('div').attr('id');
 
-  $containerDiv.css({width: '50vw', height: '50vh', left: ''});
+  if ($idValue == "sc1") {
+    $containerDiv.css({width: '50vw', height: '50vh', left: ''});
+
+  } else if ($idValue == "sc2") {
+    $containerDiv.css({width: '50vw', height: '50vh', left: ''});
+
+  } else if ($idValue == "sc3") {
+    $containerDiv.css({width: '50vw', height: '50vh', top: '', left: ''});
+
+  } else {
+    $containerDiv.css({width: '50vw', height: '50vh', right: ''});
+  }
 
   var $span = $('.retract');
   $span.remove();
