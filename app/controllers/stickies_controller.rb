@@ -14,7 +14,6 @@ class StickiesController < ApplicationController
     @categories = Category.all
     @user = current_user
     @sticky = Sticky.new(sticky_params)
-    @board = Board.find(params[:sticky][:board_id])
     if @sticky.save! && current_user
       @sticky.creator_id = @user.id
       @sticky.save!

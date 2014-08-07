@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find_by(id: session[:current_user]) if session[:current_user]
   end
-
+    
   def authorize
     unless current_user && current_user.id == params[:id].to_i
       redirect_to users_path
