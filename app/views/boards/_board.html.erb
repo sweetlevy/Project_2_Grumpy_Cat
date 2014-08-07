@@ -15,9 +15,11 @@
       <% board.categories.each do |category| %>
         <section id="sc1" class="one-full-board">
           <h3 class="container-name">Stickies</h3>
-        <% category.stickies.each do |sticky| %>
-            <div class="sticky"><%= sticky.title %></div>
-        <% end %>
+            <div id="sc1" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+              <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+          </div>
         </section>
       <% end %>
     <% when 2 %>
