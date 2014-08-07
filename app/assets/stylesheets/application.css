@@ -14,40 +14,61 @@
  *= require_self
  */
 
+
+/* General styles that are consistent across site */
+
 * {
   -webkit-box-sizing: border-box;
 }
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+*zoom: 1;
+}
 body {
-  font-family: PT Sans;
+  font-family: 'PT Sans';
   font-weight: 700;
   letter-spacing: 2px;
 }
+
+/* Styles particular to the two different headers across the site */
+
 header {
   position: fixed;
   width: 100%;
-  top: 10px;
+  top: 0;
+  height: 2em;
   font-size: 1.5em;
   text-transform: uppercase;
   z-index: 1;
   border-bottom: 1px solid #eee;
   margin-bottom: 2em;
+  padding-top: .5em;
+  background-color: white;
 }
 header a {
+  top: 10px;
   text-decoration: none;
   color: black;
 }
 header h2 {
   position: absolute;
-  top: 0;
+  top: 10px;
   margin-left: .5em;
-  text_align:left;
+  text_align: left;
 }
 header h3 {
   text-align: center;
 }
 header nav {
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   margin-top: .2em;
   margin-right: 2em;
@@ -59,7 +80,7 @@ header span {
 }
 .new-board {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 8em;
   font-size: 1em;
   font-weight: 400;
@@ -72,6 +93,9 @@ header span {
   margin-right: 2em;
   margin-top: .1em;
 }
+
+/* Container div in the layout html */
+
 #container {
   width: 100vw;
   height: 100vh;
@@ -81,4 +105,309 @@ header span {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+/* One, two, three, four are for the view that displays for categories */
+
+#one {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+}
+
+#one h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+#one p {
+
+}
+#two {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  top: 0;
+  right: 0;
+  background-color: white;
+}
+
+#two h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+#two p {
+  padding: .7em .4em;
+}
+#three {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+}
+
+#three h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+#three p {
+  padding: .7em .4em;
+}
+#four {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+}
+
+#four h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+#four p {
+  padding: .7em .4em;
+}
+
+/* style given to elements that need to be hidden */
+
+.display-none {
+  display: none;
+}
+.exit-button {
+  position: absolute;
+  padding: 3px;
+  top: 8px;
+  right: 15px;
+  border: 1px solid black;
+}
+
+/* each container of stickies have these styles */
+
+.category-name {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.sticky-container {
+  width: 100%;
+  margin-top: 2em;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  =webkit-justify-content: space-around;
+  -webkit-align-content: center;
+  padding: 1em;
+  padding-top: 4em;
+}
+.sticky {
+  position: relative;
+  width: 24%;
+  height: 3em;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color: #31fd2e;
+}
+
+
+/* styles for landing page */
+
+#landing-container {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+.user-landing {
+  margin-top: 10em;
+  text-align: center;
+}
+.user-landing h2 {
+  font-size: 3em;
+}
+.user-landing span {
+  font-weight: 400;
+  font-size: 3rem;
+}
+.user-landing span:hover {
+  text-decoration: underline;
+}
+
+/* styles for view with two categories  */
+
+.top-left-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+}
+.top-left-board h3 {
+  position: relative;
+  top: 4em;
+}
+
+.top-left-board header span {
+  margin-right: .2em;
+}
+.top-left-board p {
+  background-color: #0dd5fc;
+  padding: .7em .4em;
+}
+.top-right-board {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+}
+
+.top-right-board h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.top-right-board p {
+  background-color: #fef315;
+  padding: .7em .4em;
+}
+
+
+/* user profile landing page with collabs/boards */
+
+
+#user-info-container {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 10em;
+  z-index: 0;
+}
+#user-info-container h2 {
+  position: relative;
+  font-size: 5em;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+.user-boards {
+  float: left;
+  width: 50%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+}
+.user-boards h3 {
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+}
+.collaborations {
+  float: left;
+  width: 50%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+}
+.collaborations h3 {
+  margin-bottom: 1em;
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.collaborations a {
+  color: black;
+  text-decoration: none;
+}
+.collab {
+  padding-left: 6em;
+}
+.collab p {
+  margin-bottom: .5em;
+  font-size: 1.5em;
+}
+
+/* board view with three categories */
+
+.left-half-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+}
+.left-half-board h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.left-half-board p {
+  background-color: #0dd5fc;
+  padding: .7em .4em;
+}
+.top-right-half-board {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 50vh;
+}
+.top-right-half-board h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.top-right-half-board p {
+  background-color: #fef315;
+  padding: .7em .4em;
+}
+.bottom-right-half-board {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+  height: 50vh;
+}
+.bottom-right-half-board h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.bottom-right-half-board p {
+  background-color: #31fd2e;
+  padding: .7em .4em;
+}
+
+/* javascript helper */
+
+.retract {
+
+}
+
+#sc1.sticky {
+  background-color: #fef315;
 }
