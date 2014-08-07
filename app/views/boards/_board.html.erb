@@ -7,11 +7,11 @@
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>
-        <div class="one-category">
+        <section class="one-full-board">
         <% category.stickies.each do |sticky| %>
             <div class="sticky"><%= sticky.title %></div>
         <% end %>
-        </div>
+        </section>
       <% end %>
     <% when 2 %>
       <% board.categories.each do |category| %>
