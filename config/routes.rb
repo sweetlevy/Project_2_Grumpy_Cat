@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   get '/users/profile' =>'users#profile'
   get '/users/profiles' =>'users#profiles'
   get '/users/search' =>'users#search'
+  get '/users/search_results' =>'users#search_results'
   resources :users
-  resources :collaborations, except: [:index, :edit, :update, :show] 
+  resources :collaborations, except: [:index, :edit, :update, :show]
   resources :stickies
   resources :boards
   resources :categories

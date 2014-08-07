@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
-  $('body').on('click', '.input', showInput);
+  // $('body').on('click', '.input', showInput);
 
 });
 
