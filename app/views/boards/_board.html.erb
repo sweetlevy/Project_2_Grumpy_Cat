@@ -3,12 +3,13 @@
   <h3><%= @board.title %></h3>
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
-    <span><%= link_to "+ new sticky", new_sticky_path, remote:true%></span>
-    <span><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
-    <span><%= link_to "+ new collaborator", remote:true%></span>
+    <span class="sticky-button"><%= link_to "+ new sticky", new_sticky_path(:board_id => @board.id), remote:true%></span>
+    <span class="category-button"><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
+    <span class="collaborator-button"><%= link_to "+ new collaborator", remote:true%></span>
     <span><%= link_to "- logout", logout_path%></span>
   </nav>
 </header>
+
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>

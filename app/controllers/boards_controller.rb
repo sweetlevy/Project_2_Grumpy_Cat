@@ -2,7 +2,6 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all
-    #snapshot index
   end
 
   def new
@@ -17,6 +16,8 @@ class BoardsController < ApplicationController
     if @board.save! && current_user
       @board.creator_id = @user.id
       @board.save!
+      category = Category.create(title: "all")
+      @board.categories.push(category)
       redirect_to(board_path(@board))
     else
       render(:new)

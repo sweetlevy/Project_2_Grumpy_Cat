@@ -23,10 +23,11 @@ $(document).ready(function() {
 
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
+  $('board-nav').on('click', '.sticky-button', showModal );
 
 });
 
-function sortable() { console.log("hello");
+function sortable() {
   $("#sc1, #sc2, #sc3, #sc4").sortable({
     connectWith: ".sticky-container" }).disableSelection();
 }
@@ -65,4 +66,8 @@ function retractBoard() {
 
   var $span = $('.retract');
   $span.remove();
+}
+
+function showModal() {
+  $('.modal').show();
 }
