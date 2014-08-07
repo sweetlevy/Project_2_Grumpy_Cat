@@ -40,10 +40,7 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor', group: :production
-<<<<<<< HEAD
 
-=======
->>>>>>> b3de20d722b7150d4ae5c357b95b46f69d91ce2e
 # Use unicorn as the app server
 # gem 'unicorn'
 
