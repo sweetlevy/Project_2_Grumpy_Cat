@@ -1,15 +1,21 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-  <title>StickItApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
 
-</head>
-<body>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>StickItApp</title>
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
-<div id="container"></div>
-<%= yield %>
-</body>
+  </head>
+  <body>
+    <div id="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>

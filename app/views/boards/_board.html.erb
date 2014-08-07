@@ -1,41 +1,114 @@
-<div class="board" >
-    <p class="title"><%= @board.title %></p>
-    <p class="board_id"><%= @board.id %></p>
-    <p class="creator"><%= @board.creator_id %></p>
-    <p class="editor"><%= @board.editor_id %></p>
-
+<header>
+  <h2>User Name</h2>
+  <h3><%= @board.title %></h3>
+  <span class="new-board">+ new board</span>
+  <nav id="board-nav">
+    <span>+ new sticky</span>
+    <span>+ new category</span>
+    <span>+ new collaborator</span>
+  </nav>
+</header>
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>
-        <div class="one-category">
+        <section id="sc1" class="one-full-board">
+          <h3 class="container-name">Stickies</h3>
         <% category.stickies.each do |sticky| %>
             <div class="sticky"><%= sticky.title %></div>
         <% end %>
-        </div>
+        </section>
       <% end %>
     <% when 2 %>
       <% board.categories.each do |category| %>
-        <div class="two-categories">
-        <% category.stickies.each do |sticky| %>
-            <div class="sticky"><%= sticky.title %></div>
-        <% end %>
-        </div>
+        <% if board.categories.find_index(category) == 0 %>
+          <section class='top-left-board'>
+            <h3 class="container-name">Stickies</h3>
+            <div id="sc1" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </section>
+        <% else %>
+          <section class='top-right-board'>
+            <h3 class="container-name">Category Name</h3>
+            <div id="sc2" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </section>
       <% end %>
+      <%end %>
     <% when 3 %>
       <% board.categories.each do |category| %>
-        <div class="three-categories">
-        <% category.stickies.each do |sticky| %>
-            <div class="sticky"><%= sticky.title %></div>
+        <% if board.categories.find_index(category) == 0 %>
+          <section class='left-half-board'>
+            <h3 class="container-name">Stickies</h3>
+            <div id="sc1" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </section>
+        <% elsif board.categories.find_index(category) == 1 %>
+          <section class='top-right-half-board'>
+            <h3 class="container-name">Category Name</h3>
+            <div id="sc2" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </section>
+        <% else %>
+          <section class='bottom-right-half-board'>
+            <h3 class="container-name">Category Name</h3>
+            <div id="sc3" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </section>
         <% end %>
-        </div>
       <% end %>
     <% when 4 %>
       <% board.categories.each do |category| %>
-        <div class="four-categories">
-        <% category.stickies.each do |sticky| %>
-            <div class="sticky"><%= sticky.title %></div>
+        <% if board.categories.find_index(category) == 0 %>
+          <div id='one'>
+            <h3 class="container-name">Stickies</h3>
+            <div id="sc1" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </div>
+        <% elsif board.categories.find_index(category) == 1 %>
+          <div id='two'>
+            <h3 class="container-name">Category Name</h3>
+            <div id="sc2" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </div>
+        <% elsif board.categories.find_index(category) == 2 %>
+          <div id='three'>
+            <h3 class="container-name">Category Name</h3>
+            <div id="sc3" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </div>
+        <% else %>
+          <div id='four'>
+            <h3 class="container-name">Category Name</h3>
+            <div id="sc4" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+                <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+            </div>
+          </div>
         <% end %>
-        </div>
       <% end %>
     <% end %>
-</div>

@@ -1,25 +1,31 @@
-<%= div_for(user) do %>
-  <p class="user">
-    <%= user.username %>
-  </p>
-  <p class="user">
-    <%= user.name %>
-  </p>
-  <p class="user">
-    <%= user.email %>
-  </p>
-  <p class="user">
-    <% user.collaborations.each do |collaboration| %>
-      <%= link_to collaboration.board.title, board_path(collaboration.board), remote: true %>
-    <% end %>
-  </p>
-  <ul>
+<header>
+  <h2><%= user.username %></h2>
+  <span class="new-board">+ new board</span>
+  <nav id="board-nav">
+    <span>+ Edit</span>
+    <span>+ Logout</span>
+  </nav>
+</header>
 
-    <% user.created_boards.each do |brd| %>
-    <li><%= link_to brd.title, board_path(brd), remote: true, :board_id => brd.id  %></li>
-    <% if can? :update, @board %>
-    <%= (link_to 'Delete Board', board_path(brd), remote: true, method: :delete) %>
+<div class="clearfix" id="user-info-container">
+  <h2><%= user.username %></h2>
+  <div class="collaborations">
+    <h3>Collaborations</h3>
+
+    <% user.collaborations.each do |collaboration| %>
+      <div class="collab">
+      <p><%= link_to collaboration.board.title, board_path(collaboration.board), remote: true %></p>
+      </div>
     <% end %>
-    <% end %>
-</ul>
-<% end %>
+
+  </div>
+  <div class="user-boards">
+      <h3>Boards</h3>
+      <% user.created_boards.each do |board| %>
+      <div class="user-boards">
+      <p><%= link_to board.title, board_path(board), remote: true  %></p>
+      <p><%= (link_to 'Delete Board', board_path(board), remote: true, method: :delete) %></p>
+      </div>
+      <% end %>
+  </div>
+</div>
