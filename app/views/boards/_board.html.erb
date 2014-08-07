@@ -1,5 +1,5 @@
 <header>
-  <h2><%= link_to @user.username, users_profile_path, remote: true %></h2>
+  <h2><%= link_to @user.username, users_profiles_path(@user), remote: true %></h2>
   <h3><%= @board.title %></h3>
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
