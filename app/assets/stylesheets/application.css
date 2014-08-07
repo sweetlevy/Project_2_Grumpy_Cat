@@ -126,7 +126,7 @@ header span {
   font-size: 1.2em;
 }
 #one p {
-  
+
 }
 #two {
   position: absolute;
@@ -213,7 +213,7 @@ header span {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
-  =webkit-justify-content: space-around;
+  -webkit-justify-content: space-around;
   -webkit-align-content: center;
   padding: 1em;
   padding-top: 4em;
