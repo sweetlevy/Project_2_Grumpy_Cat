@@ -3,9 +3,8 @@
   <h3><%= @board.title %></h3>
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
-    <span>+ new sticky</span>
-    <span>+ new category</span>
-    <span>+ new collaborator</span>
+    <span><%= link_to "+ new sticky", new_sticky_path, remote:true%></span>
+    <span><%= link_to "+ new category", new_category_path, remote:true%></span>
   </nav>
 </header>
     <% case board.categories.length %>
@@ -63,7 +62,7 @@
         <% else %>
           <section class='bottom-right-half-board'>
             <h3 class="container-name">Category Name</h3>
-            <div id="sc3" class="sticky-container">
+            <div id="sc4" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
             <% end %>

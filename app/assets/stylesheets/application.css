@@ -308,6 +308,21 @@ header span {
   margin-bottom: 1.5em;
   text-align: center;
 }
+.my-boards {
+  margin: 0;
+  padding-left: 3.5em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+.my-boards a {
+  text-decoration: none;
+  color: black;
+}
+.my-boards h3 {
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+}
 .user-boards {
   float: left;
   width: 50%;
@@ -316,30 +331,20 @@ header span {
   padding: 0;
 }
 .user-boards h3 {
-  font-size: 3em;
-  font-weight: 700;
-  text-align: center;
-}
-.collaborations {
-  float: left;
-  width: 50%;
-  height: 300px;
-  margin: 0;
-  padding: 0;
-}
-.collaborations h3 {
   margin-bottom: 1em;
   font-size: 3em;
   font-weight: 700;
   text-align: center;
 }
 
-.collaborations a {
+.user-boards a {
   color: black;
   text-decoration: none;
 }
 .collab {
-  padding-left: 6em;
+  padding-left: 4em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
 }
 .collab p {
   margin-bottom: .5em;

@@ -12,10 +12,10 @@ password_confirmation: "123"})
 sean = User.create({username: "Sean", name: "Sean Jennings", email: 'sejenc.dev@gmail.com', password: "123",
 password_confirmation: "123"})
 
-board1 = Board.create({title: "One"})
+sarit.Board.create({title: "One"})
 board2 = Board.create({title: "Two"})
 board3 = Board.create({title: "Three"})
-board4 = Board.create({title: "Four"})
+board4 = Board.create()
 
 collab1= Collaboration.create(user_id: sarit.id, board_id: board1.id)
 collab2= Collaboration.create(user_id: sarit.id, board_id: board2.id)
