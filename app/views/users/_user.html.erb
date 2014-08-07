@@ -9,22 +9,23 @@
 
 <div class="clearfix" id="user-info-container">
   <h2><%= user.username %></h2>
-  <div class="collaborations">
-    <h3>Collaborations</h3>
-
+  <div class="user-boards">
+    <h3>Collaboration Boards</h3>
     <% user.collaborations.each do |collaboration| %>
       <div class="collab">
-      <p><%= link_to collaboration.board.title, board_path(collaboration.board), remote: true %></p>
+      <span>Title: </span>
+      <span><%= link_to collaboration.board.title, board_path(collaboration.board), remote: true %></span> |
+      <span><%= link_to 'Delete Board', board_path(collaboration.board), remote: true, method: :delete %></span>
       </div>
     <% end %>
-
   </div>
   <div class="user-boards">
-      <h3>Boards</h3>
+      <h3>My Boards</h3>
       <% user.created_boards.each do |board| %>
-      <div class="user-boards">
-      <p><%= link_to board.title, board_path(board), remote: true  %></p>
-      <p><%= (link_to 'Delete Board', board_path(board), remote: true, method: :delete) %></p>
+      <div class="my-boards">
+      <span>Title: </span>
+      <span><%= link_to board.title, board_path(board), remote: true  %></span> |
+      <span><%= link_to 'Delete Board', board_path(board), remote: true, method: :delete %></span>
       </div>
       <% end %>
   </div>
