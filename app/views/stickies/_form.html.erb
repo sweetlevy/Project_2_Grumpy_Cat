@@ -1,0 +1,16 @@
+<%= form_for @sticky do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.label :link_url %>
+  <%= f.text_field :link_url %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,4 +1,4 @@
-<%= form_for @board do |f| %>
+<%= form_for @board, remote: true   do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 

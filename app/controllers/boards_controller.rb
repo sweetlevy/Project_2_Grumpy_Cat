@@ -1,13 +1,14 @@
 class BoardsController < ApplicationController
 
   def index
-    @boards = Board.all.limit(5)
+    @boards = Board.all
     #snapshot index
   end
 
   def new
     @user = current_user
     @board = Board.new
+    render action: 'create'
   end
 
   def create
@@ -24,6 +25,8 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @sticky = Sticky.new
+    render action: 'board'
   end
 
   def edit
@@ -43,10 +46,10 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @board = Board.find(params[:id])
-    # @user =
-    # if current_user === @user
-
+    @board.destroy
+    render action: @user
   end
 
   private

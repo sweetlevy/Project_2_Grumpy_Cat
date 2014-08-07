@@ -1,20 +1,41 @@
-<div class="board">
+<div class="board" >
+    <p class="title"><%= @board.title %></p>
+    <p class="board_id"><%= @board.id %></p>
+    <p class="creator"><%= @board.creator_id %></p>
+    <p class="editor"><%= @board.editor_id %></p>
 
-  <p class="title">
-  <%= @board.title %>
-  </p>
-
-  <p class="creatorId">
-  <%= @board.creator_id %>
-  </p>
-
-  <p class="editorId">
-  <%= @board.editor_id %>
-  </p>
-
-  <div id="board-links">
-    <%= link_to("edit", edit_board_path(@board)) %>
-    <%= link_to("delete", board_path(@board), method: :delete) %>
-  </div>
-
+    <% case board.categories.length %>
+    <% when 1 %>
+      <% board.categories.each do |category| %>
+        <div class="one-category">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% when 2 %>
+      <% board.categories.each do |category| %>
+        <div class="two-categories">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% when 3 %>
+      <% board.categories.each do |category| %>
+        <div class="three-categories">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% when 4 %>
+      <% board.categories.each do |category| %>
+        <div class="four-categories">
+        <% category.stickies.each do |sticky| %>
+            <div class="sticky"><%= sticky.title %></div>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
 </div>

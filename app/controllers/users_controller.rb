@@ -6,8 +6,21 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
+  def search
+    @collaboration = Collaboration.new
+    @user = current_user
+    @user_search = User.where("LOWER(name) LIKE '%#{params[:search].downcase}%'")
+  end
 
+  def profile
+    @user = current_user
+  end
+
+  def profiles
+    @user = current_user
+  end
+
+  def create
     @user = User.new(user_params)
     if @user.save
       redirect_to(login_path)
@@ -16,12 +29,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-    if current_user != @user
-      redirect_to user_path(current_user)
-    end
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  #   if current_user != @user
+  #     # redirect_to user_path(current_user)
+  #     render json: true
+  #   end
+  # end
 
   def edit
     @user = User.find(params[:id])
@@ -29,18 +43,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to (user_path(@user))
-    else
-      render :edit
-    end
+    @user.update(user_params)
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     session[:current_user] = nil
-    redirect_to root_path
+    redirect_to login_path
   end
 
   def user_params

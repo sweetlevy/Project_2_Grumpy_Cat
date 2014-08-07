@@ -1,0 +1,5 @@
+var container = $('#container')
+container.empty()
+$('.link_profile').remove()
+var userHTML = $('<%= j(render @user) %>');
+container.append(userHTML);
