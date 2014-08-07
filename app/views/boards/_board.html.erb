@@ -4,7 +4,8 @@
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
     <span><%= link_to "+ new sticky", new_sticky_path, remote:true%></span>
-    <span><%= link_to "+ new category", new_category_path, remote:true%></span>
+    <span><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
+    <span><%= link_to "+ new collaboration", users_search_path(:board_id => @board.id), remote:true%></span>
   </nav>
 </header>
     <% case board.categories.length %>
