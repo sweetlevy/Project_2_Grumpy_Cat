@@ -27,7 +27,8 @@ class BoardsController < ApplicationController
   end
 
   def show
-    # @board = Board.find(params[:id])
+    @user = current_user
+    @board = Board.find(params[:id])
     @sticky = Sticky.new
     render action: 'board'
   end

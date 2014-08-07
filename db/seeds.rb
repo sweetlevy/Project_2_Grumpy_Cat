@@ -12,20 +12,15 @@ password_confirmation: "123"})
 sean = User.create({username: "Sean", name: "Sean Jennings", email: 'sejenc.dev@gmail.com', password: "123",
 password_confirmation: "123"})
 
-sarit.Board.create({title: "One"})
-board2 = Board.create({title: "Two"})
-board3 = Board.create({title: "Three"})
-board4 = Board.create()
+
+board1 = Board.create({title: "One", creator_id: sarit.id})
+board2 = Board.create({title: "Two", creator_id: francis.id})
+board3 = Board.create({title: "Three", creator_id: charlye.id})
+board4 = Board.create({title: "Four", creator_id: sean.id})
 
 collab1= Collaboration.create(user_id: sarit.id, board_id: board1.id)
 collab2= Collaboration.create(user_id: sarit.id, board_id: board2.id)
 collab3= Collaboration.create(user_id: sarit.id, board_id: board3.id)
-
-
-  board1.creator_id = sarit.id
-  board2.creator_id = francis.id
-  board3.creator_id = charlye.id
-  board4.creator_id = sean.id
 
 category1 = Category.create({title: "Pain Points", board_id: board1.id})
 category2 = Category.create({title: "Enjoyable", board_id: board1.id})
