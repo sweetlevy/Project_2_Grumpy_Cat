@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 });
 
-function sortable() {
+function sortable() { console.log("hello");
   $("#sc1, #sc2, #sc3, #sc4").sortable({
     connectWith: ".sticky-container" }).disableSelection();
 }
