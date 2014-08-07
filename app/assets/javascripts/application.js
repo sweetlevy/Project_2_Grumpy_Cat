@@ -42,6 +42,7 @@ function expandBoard() {
   var span = $('<span class="retract">').text(' / Show All Categories');
   var title = $('.container-name');
   title.append(span);
+  $('body').off('click', '.sticky-container');
 }
 
 function retractBoard() {
@@ -66,6 +67,7 @@ function retractBoard() {
 
   var $span = $('.retract');
   $span.remove();
+  $('body').on('click', '.sticky-container', expandBoard);
 }
 
 function showModal() {

@@ -219,7 +219,22 @@ header span {
 #four p {
   padding: .7em .4em;
 }
-
+.one-full-board {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.one-full-board h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.one-full-board p {
+  background-color: #fef315  ;
+  padding: .7em .4em;
+}
 /* style given to elements that need to be hidden */
 
 .display-none {
@@ -259,6 +274,8 @@ header span {
   margin-right: 5px;
   margin-bottom: 5px;
   background-color: #31fd2e;
+  text-align: center;
+  padding-top: 1em;
 }
 
 
