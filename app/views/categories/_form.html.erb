@@ -1,8 +1,6 @@
-<%= binding.pry %>
 <%= form_for Category.new, remote: true do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.hidden_field :board_id, value: params[:id]  %>
   <%= f.submit %>
-
 <% end %>
