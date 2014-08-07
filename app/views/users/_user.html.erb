@@ -18,7 +18,6 @@
     <% user.created_boards.each do |brd| %>
     <li><%= link_to brd.title, board_path(brd), remote: true, :board_id => brd.id  %></li>
     <%= (link_to 'Delete Board', board_path(brd), remote: true, method: :delete) %>
-
     <% end %>
-  </ul>
+</ul>
 <% end %>
