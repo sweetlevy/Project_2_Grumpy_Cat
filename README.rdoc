@@ -2,7 +2,7 @@
 
 Application Name: "Stick-IT"
 
-This application was created for General Assembly's Web Development Immersive (WDI) course. This application is currently in development. This project is Project 2 of the WDI course, a Team Project of Team Name "Grumpy Cat". Team Members are: Charlye Brown, Francis Castillo, Sean Jennings Jr and Sarit Levy.
+This application was created for General Assembly's Web Development Immersive (WDI) course. This application is currently in development. This project is Project 2 of the WDI course, a Team Project of Team Name "Grumpy Cat". Team Members are: Charlye Tran, Francis Castillo, Sean Jennings Jr and Sarit Levy.
 
 The purpose of this application is to be a whiteboard for teamwork collaborations.  This idea
 was inspired by the colorful post-it notes posted on white walls and used to organize the various pieces of information collected by User Experience Design students/professionals gathered from their user experience research of website design.
@@ -23,21 +23,27 @@ The current features of this application include:
     - a user can delete stick-its
     - a user can delete a board
     - a user can edit their account information
-    - a user can delete their Stick-IT account
 
-*********************************************************
+- Some of the features that are currently in development:
+    - a user will be able to take a snapshot of his/her board to be able to
+      use it as a visual reference
+    - a user will be able to revert back to an older (saved) version of a board
+    - a user will be able to isolate a specific group of stick-its for later use
+
+
+*********************************************************************
 
 Link to the Heroku-hosted site for this application:
 
 http://stckit.herokuapp.com/
 
-*********************************************************
+*********************************************************************
 
 Link to Trello board containing user stories for this application:
 
 https://trello.com/b/AoYD3TK6/grumpycats-stick-it
 
-*********************************************************
+*********************************************************************
 
 Link to this application's ERD (Entity Relationship Diagram) on lucidchart.com:
 
