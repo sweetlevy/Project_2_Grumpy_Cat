@@ -1,24 +1,12 @@
 <div class="sticky">
-
   <p class="title">
   <%= @sticky.title %>
   </p>
-
-  <p class="creatorId">
-  <%= @sticky.creator_id %>
-  </p>
-
-  <p class="editorId">
-  <%= @sticky.editor_id %>
-  </p>
-
   <p class="content">
   <%= @sticky.content %>
   </p>
-
-  <div id="sticky-links">
+  <div id="sticky-meta">
     <%= link_to("edit", edit_sticky_path(@sticky)) %>
     <%= link_to("delete", sticky_path(@sticky), method: :delete) %>
   </div>
-
 </div>
