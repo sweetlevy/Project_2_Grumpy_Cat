@@ -16,7 +16,6 @@ class StickiesController < ApplicationController
     @sticky = Sticky.new(sticky_params)
     if @sticky.save!
       @sticky.creator_id = @user.id
-      binding.pry
       @sticky.category_id = @board.categories.find_by(params[:title]).id
       @sticky.save!
       redirect_to(board_path(@board))
