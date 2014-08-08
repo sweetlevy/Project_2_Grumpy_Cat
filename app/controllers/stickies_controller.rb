@@ -19,7 +19,6 @@ class StickiesController < ApplicationController
       @sticky.category_id = @board.categories.find_by(title: 'all').id
       @sticky.save!
       redirect_to(board_path(@board))
-
     else
       render(:new)
     end

@@ -5,10 +5,8 @@
   <nav id="board-nav">
     <span class="sticky-button"><%= link_to "+ new sticky", new_sticky_path(:board_id => @board.id), remote:true%></span>
     <span class="category-button"><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
-    <span class="collaborator-button"><%= link_to "+ new collaborator", remote:true%></span>
-
+    <span class="collaborator-button"><%= link_to "+ new collaborator", users_search_path(:board_id => @board.id), remote:true%></span>
     <span><%= link_to "- logout", logout_path%></span>
-
   </nav>
 </header>
 

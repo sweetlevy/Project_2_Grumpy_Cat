@@ -25,6 +25,10 @@ $(document).ready(function() {
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
 
+  $('#board-nav').on('click', '.sticky-button', showModal );
+  $('#board-nav').on('click', '.category-button', showModal );
+  $('#board-nav').on('click', '.collaborator-button', showModal );
+
   $('#container').on('click', '.board-title',editTitle);
   $('body').on('keypress', '.edit-title',
      function(event) {
@@ -135,6 +139,5 @@ function updateTitle() {
       // headerElement.remove();
       $('header .edit').replaceWith($('<h3 data-id=' + id + '> ' + newTitle + '</h3>'))
       console.log('done');
-    //   $('<h3>' + @board.title + '</h3>').appendTo($('#container header'));
     });
 }
