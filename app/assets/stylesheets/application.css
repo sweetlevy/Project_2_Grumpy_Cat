@@ -474,8 +474,3 @@ header span {
 #sc1.sticky {
   background-color: #fef315;
 }
-#search-div {
-  position: absolute;
-  right: 3.5em;
-  margin-top: 3em;
-}

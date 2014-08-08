@@ -16,7 +16,6 @@ class BoardsController < ApplicationController
   def create
     @user = current_user
     # @board = Board.new(board_params)
-    @board.categories.new(title: "all")
     if @board.save! && current_user
       @board.creator_id = @user.id
       @board.save!
