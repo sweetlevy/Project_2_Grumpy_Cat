@@ -1,18 +1,14 @@
+<h1 class="logo">Stick-<span id="i">I</span><span id="t">T</span></h1>
+
 <div class="login">
-<h2>Login</h2>
   <div class='login_fields'>
   <%= form_tag login_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+    <%= text_field_tag 'username', nil, placeholder: 'username' %>
     <br>
-
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= password_field_tag 'password', nil, placeholder: 'password' %>
     <br>
-
-    <%= submit_tag 'Log In' %>
-    <% end %>
-    <br>
+    <%= submit_tag 'Sign In' %>
+  <% end %>
   </div>
 
     <%= link_to 'Sign Up for an Account', new_user_path %>
