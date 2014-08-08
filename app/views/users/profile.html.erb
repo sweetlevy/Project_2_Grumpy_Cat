@@ -3,7 +3,7 @@
 <%= link_to 'Your Profile', users_profiles_path, remote: true %>
 </p>
 <p>
-<%= link_to 'Create a New Board', new_board_path, remote: true %>
+<%= link_to 'Create a New Board', new_board_path, id: 'new_board', remote: true %>
 </p>
 
 <%= link_to 'Edit Your Account', edit_user_path(@user), remote: true %> |
