@@ -1,32 +1,44 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Application Name: "Stick-IT"
 
-Things you may want to cover:
+This application was created for General Assembly's Web Development Immersive (WDI) course. This application is currently in development. This project is Project 2 of the WDI course, a Team Project of Team Name "Grumpy Cat". Team Members are: Charlye Brown, Francis Castillo, Sean Jennings Jr and Sarit Levy.
 
-* Ruby version
+The purpose of this application is to be a whiteboard for teamwork collaborations.  This idea
+was inspired by the colorful post-it notes posted on white walls and used to organize the various pieces of information collected by User Experience Design students/professionals gathered from their user experience research of website design.
 
-* System dependencies
+The current features of this application include:
 
-* Configuration
+- User can sign up for an account or log-in to their Stick-IT account
 
-* Database creation
+- When logged-in:
+    - a user can create a board and add stick-its to it
+    - a user can view the boards s/he created with the stick-its
+      that are attached to those boards
+    - a user can add collaborators as team members so that the user
+      and collaborators can work on the board together and add stick-its to it
+    - a user can add categories and colors to the stick-its to help organize them
+    - a user can move stick-its from one category area to another and the color
+      of the stick-it will change and match the color of its new category
+    - a user can delete stick-its
+    - a user can delete a board
+    - a user can edit their account information
+    - a user can delete their Stick-IT account
 
-* Database initialization
+*********************************************************
 
-* How to run the test suite
+Link to the Heroku-hosted site for this application:
 
-Selenium WebDriver
-Capybara
-Pry
+http://stckit.herokuapp.com/
 
-* Services (job queues, cache servers, search engines, etc.)
+*********************************************************
 
-* Deployment instructions
+Link to Trello board containing user stories for this application:
 
-* ...
+https://trello.com/b/AoYD3TK6/grumpycats-stick-it
 
+*********************************************************
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Link to this application's ERD (Entity Relationship Diagram) on lucidchart.com:
+
+https://www.lucidchart.com/documents/edit/dd0f680f-6ff9-422b-9570-1ea8afdd5a2f/0

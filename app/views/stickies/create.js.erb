@@ -1,4 +1,5 @@
-var container = $('#container')
-var stickyHTML = '<%=  j(render @sticky)%>'
-
-$(stickyHTML).appendTo(container);
+console.log('running sticky create');
+var formHTML = $("<%= j(render 'form') %>");
+var container = $('#container');
+container.empty();
+container.append(formHTML);
