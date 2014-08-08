@@ -66,7 +66,7 @@
   .new-sticky span {
   display: block;
   }
-body {
+  body {
   font-family: 'PT Sans';
   font-weight: 700;
   letter-spacing: 2px;
@@ -273,9 +273,15 @@ header span {
   height: 3em;
   margin-right: 5px;
   margin-bottom: 5px;
-  background-color: #31fd2e;
   text-align: center;
   padding-top: 1em;
+}
+.sticky p {
+  background-color: #31fd2e;
+}
+
+.hidden-content {
+  display: none;
 }
 
 
@@ -467,4 +473,40 @@ header span {
 
 #sc1.sticky {
   background-color: #fef315;
+}
+/* modal for show sticky */
+.sticky-modal {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+  z-index: 20;
+}
+.sticky-modal-content {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  top: 30%;
+  left: 60%;
+  margin: -1% 0 0 -25%;
+  z-index: 50;
+  background-color: #fef315  ;
+}
+.sticky-content {
+  margin: 0 auto;
+  width: 95%;
+  padding: 1em;
+}
+.sticky-content h3 {
+  margin-bottom: 1em;
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.expanded-sticky {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.2;
 }

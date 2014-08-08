@@ -1,0 +1,10 @@
+var sticky = $("<%= j(render @sticky ) %>");
+var stickyModal = $(".sticky-modal");
+var stickyModalContent = $(".stick-modal-content");
+var stickyContent = $('.stickyContent').append($('<h3>').text(<%=@sticky.title%>));
+var expandedSticky = $('.expanded-sticky').append($('<p>').text(<%=@sticky.content%>));
+
+stickyContent.append(expandedSticky);
+stickyModalContent.append(stickyContent);
+stickyModal.append(stickyModalContent);
+$('#container').append(stickyModal);

@@ -26,7 +26,6 @@ class StickiesController < ApplicationController
 
   def show
     @sticky = Sticky.find(params[:id])
-    #modal
   end
 
   def edit

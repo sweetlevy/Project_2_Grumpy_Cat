@@ -24,7 +24,6 @@ $(document).ready(function() {
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
   $('board-nav').on('click', '.sticky-button', showModal );
-
 });
 
 function sortable() {
@@ -40,9 +39,12 @@ function expandBoard() {
   $parent.offset({top: 0, left: 0}).css({width: '100%', height: 0});
 
   var span = $('<span class="retract">').text(' / Show All Categories');
+  span.on('click', removeMouseEvents);
   var title = $('.container-name');
   title.append(span);
   $('body').off('click', '.sticky-container');
+  $('.sticky-container').on('mouseover', '.sticky', expandSticky);
+  $('.sticky-container').on('mouseleave', '.sticky', retractSticky);
 }
 
 function retractBoard() {
@@ -59,10 +61,10 @@ function retractBoard() {
     $containerDiv.css({width: '50vw', height: '50vh', left: ''});
 
   } else if ($idValue == "sc3") {
-    $containerDiv.css({width: '50vw', height: '50vh', top: '', left: ''});
+    $containerDiv.css({width: '50vw', height: '50vh', right: ''});
 
   } else {
-    $containerDiv.css({width: '50vw', height: '50vh', right: ''});
+    $containerDiv.css({width: '50vw', height: '50vh', top: '', left: ''});
   }
 
   var $span = $('.retract');
@@ -72,4 +74,20 @@ function retractBoard() {
 
 function showModal() {
   $('.modal').show();
+}
+function retractSticky() {
+  var $this = $(this);
+  var content = $this.children().eq(1);
+  content.css('display', 'none');
+}
+
+function expandSticky() {
+  var $this = $(this);
+  var content = $this.children().eq(1);
+  content.css('display', 'block');
+}
+
+function removeMouseEvents() {
+$('.sticky-container').off('mouseover', '.sticky');
+$('.sticky-container').off('mouseleave', '.sticky');
 }
