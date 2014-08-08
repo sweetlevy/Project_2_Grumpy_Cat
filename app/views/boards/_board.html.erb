@@ -1,11 +1,11 @@
 <header>
   <h2><%= link_to @user.username, users_profiles_path(@user), remote: true %></h2>
-  <h3><%= @board.title %></h3>
+  <h3 class="board-title" data-id=<%= @board.id %> ><%= @board.title %></h3>
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
     <span class="sticky-button"><%= link_to "+ new sticky", new_sticky_path(:board_id => @board.id), remote:true%></span>
     <span class="category-button"><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
-    <span class="collaborator-button"><%= link_to "+ new collaborator", remote:true%></span>
+    <span class="collaborator-button"><%= link_to "+ new collaborator", users_search_path(:board_id => @board.id), remote:true%></span>
     <span><%= link_to "- logout", logout_path%></span>
   </nav>
 </header>

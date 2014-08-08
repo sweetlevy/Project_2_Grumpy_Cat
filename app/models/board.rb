@@ -1,4 +1,5 @@
 class Board < ActiveRecord::Base
+
   has_many :stickies, through: :categories, dependent: :destroy
   has_many :collaborations
   #points back to user model, so that the user_id is added to creator_id

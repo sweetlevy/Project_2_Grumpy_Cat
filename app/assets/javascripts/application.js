@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
 
@@ -23,7 +24,23 @@ $(document).ready(function() {
 
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
+
+  $('#board-nav').on('click', '.sticky-button', showModal );
+  $('#board-nav').on('click', '.category-button', showModal );
+  $('#board-nav').on('click', '.collaborator-button', showModal );
+
+  $('#container').on('click', '.board-title',editTitle);
+  $('body').on('keypress', '.edit-title',
+     function(event) {
+      var theActualInputBox = this;
+      if (event.which === 13) {
+        updateTitle.call(theActualInputBox);
+      }
+      }
+  );
+
   $('board-nav').on('click', '.sticky-button', showModal );
+
 });
 
 function sortable() {
@@ -43,8 +60,10 @@ function expandBoard() {
   var title = $('.container-name');
   title.append(span);
   $('body').off('click', '.sticky-container');
+
   $('.sticky-container').on('mouseover', '.sticky', expandSticky);
   $('.sticky-container').on('mouseleave', '.sticky', retractSticky);
+
 }
 
 function retractBoard() {
@@ -90,4 +109,35 @@ function expandSticky() {
 function removeMouseEvents() {
 $('.sticky-container').off('mouseover', '.sticky');
 $('.sticky-container').off('mouseleave', '.sticky');
+}
+
+function editTitle() {
+  var titleH3 = $(this);
+  var id = titleH3.data('id');
+  var editSpan = $('<span class="edit">');
+  var editInput = $('<input type="text" class="edit-title"' +  'data-id=' + id + '>');
+
+  editInput.val(titleH3.text());
+
+  editSpan.append(editInput);
+
+  titleH3.replaceWith(editSpan);
+}
+
+function updateTitle() {
+  var headerElement = $(this).closest('header');
+  var id = $('.edit-title').data('id');
+  console.log(id);
+  var newTitle = headerElement.find('.edit-title').val();
+  var params = {
+    board: {
+      title: newTitle
+    }
+  };
+  $.ajax('/boards/' + id, { type: "PUT", data: params })
+    .done(function(board) {
+      // headerElement.remove();
+      $('header .edit').replaceWith($('<h3 data-id=' + id + '> ' + newTitle + '</h3>'))
+      console.log('done');
+    });
 }

@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  */
 
 
@@ -100,6 +101,11 @@ header h2 {
 }
 header h3 {
   text-align: center;
+}
+header .edit {
+  position: absolute;
+  left: 25em;
+  outline: 0;
 }
 header nav {
   position: absolute;
@@ -474,6 +480,12 @@ header span {
 #sc1.sticky {
   background-color: #fef315;
 }
+
+#search-div {
+  position: absolute;
+  right: 3.5em;
+  margin-top: 3em;
+
 /* modal for show sticky */
 .sticky-modal {
   position: fixed;

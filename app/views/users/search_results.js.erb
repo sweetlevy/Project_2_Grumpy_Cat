@@ -1,0 +1,8 @@
+
+$('#container .user').remove();
+<% if @user_search.empty? %>
+  $('<div><p>No results found</p></div>').appendTo($('#container'));
+<% else %>
+  var userNAME = '<%= j(render "user_search_results") %>';
+  $(userNAME).appendTo($('#container'));
+<% end %>

@@ -5,8 +5,12 @@
   <p class="content">
   <%= @sticky.content %>
   </p>
+
   <div id="sticky-meta">
-    <%= link_to("edit", edit_sticky_path(@sticky)) %>
-    <%= link_to("delete", sticky_path(@sticky), method: :delete) %>
+    <% if can? :update, @sticky %>
+      <%= link_to("edit", edit_sticky_path(@sticky)) %>
+      <%= link_to("delete", sticky_path(@sticky), method: :delete) %>
+    <% end %>
+
   </div>
 </div>
