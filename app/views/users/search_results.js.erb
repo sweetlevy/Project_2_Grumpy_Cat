@@ -1,8 +1,7 @@
-
-$('#container .user').remove();
 <% if @user_search.empty? %>
-  $('<div><p>No results found</p></div>').appendTo($('#container'));
+  $('<div><p>No results found</p></div>').appendTo($('.modal-content'));
 <% else %>
   var userNAME = '<%= j(render "user_search_results") %>';
-  $(userNAME).appendTo($('#container'));
+  $('#search-div').remove()
+  $(userNAME).appendTo($('.modal-content'));
 <% end %>

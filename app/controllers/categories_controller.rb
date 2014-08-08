@@ -9,14 +9,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    @board = Board.find(params[:category][:board_id])
     @category = Category.new(category_params)
     current_board =
     Board.find(params[:category][:board_id])
 
     if @category.save!
-      respond_to do |format|
-        format.js
-      end
+      redirect_to(board_path(@board))
 
     else
       render :new

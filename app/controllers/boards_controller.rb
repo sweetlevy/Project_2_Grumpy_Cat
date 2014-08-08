@@ -16,11 +16,13 @@ class BoardsController < ApplicationController
   def create
     @user = current_user
     # @board = Board.new(board_params)
-    @board.categories.new(title: "all")
     if @board.save! && current_user
       @board.creator_id = @user.id
       @board.save!
-        redirect_to(board_path(@board))
+      category = Category.create(title: "all")
+      @board.categories.push(category)
+      redirect_to(board_path(@board))
+
     else
       render(:new)
     end
@@ -43,7 +45,7 @@ class BoardsController < ApplicationController
     if @board.update(board_params)
       @board.editor_id = @user.id
       @board.save
-      redirect_to(board_path(@board))
+      render json: @board
     else
       render(:edit)
     end
