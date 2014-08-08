@@ -15,8 +15,79 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function() {
 
-$(function() {
-  console.log("loaded brah!");
+  console.log('on it');
 
-})
+  sortable();
+
+  $('body').on('click', '.sticky-container', expandBoard);
+  $('body').on('click', '.retract', retractBoard);
+  $('board-nav').on('click', '.sticky-button', showModal );
+});
+
+function sortable() {
+  $("#sc1, #sc2, #sc3, #sc4").sortable({
+    connectWith: ".sticky-container" }).disableSelection();
+}
+
+
+function expandBoard() {
+  var $this = $(this);
+  var $parent = $this.parent();
+  $parent.siblings().hide();
+  $parent.offset({top: 0, left: 0}).css({width: '100%', height: 0});
+
+  var span = $('<span class="retract">').text(' / Show All Categories');
+  span.on('click', removeMouseEvents);
+  var title = $('.container-name');
+  title.append(span);
+  $('body').off('click', '.sticky-container');
+  $('.sticky-container').on('mouseover', '.sticky', expandSticky);
+  $('.sticky-container').on('mouseleave', '.sticky', retractSticky);
+}
+
+function retractBoard() {
+  var $this = $(this);
+
+  var $containerDiv = $this.parent().parent();
+  $containerDiv.siblings().show();
+  var $idValue = $containerDiv.children('div').attr('id');
+
+  if ($idValue == "sc1") {
+    $containerDiv.css({width: '50vw', height: '50vh', left: ''});
+
+  } else if ($idValue == "sc2") {
+    $containerDiv.css({width: '50vw', height: '50vh', left: ''});
+
+  } else if ($idValue == "sc3") {
+    $containerDiv.css({width: '50vw', height: '50vh', right: ''});
+
+  } else {
+    $containerDiv.css({width: '50vw', height: '50vh', top: '', left: ''});
+  }
+
+  var $span = $('.retract');
+  $span.remove();
+  $('body').on('click', '.sticky-container', expandBoard);
+}
+
+function showModal() {
+  $('.modal').show();
+}
+function retractSticky() {
+  var $this = $(this);
+  var content = $this.children().eq(1);
+  content.css('display', 'none');
+}
+
+function expandSticky() {
+  var $this = $(this);
+  var content = $this.children().eq(1);
+  content.css('display', 'block');
+}
+
+function removeMouseEvents() {
+$('.sticky-container').off('mouseover', '.sticky');
+$('.sticky-container').off('mouseleave', '.sticky');
+}

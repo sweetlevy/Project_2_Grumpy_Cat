@@ -7,19 +7,18 @@ class StickiesController < ApplicationController
   def new
     @user = current_user
     @sticky = Sticky.new
-
   end
 
   def create
     @categories = Category.all
+    @board = Board.find(params[:sticky][:board_id])
     @user = current_user
-    # @board = board.find(params[:id])
     @sticky = Sticky.new(sticky_params)
-    if @sticky.save! && current_user
+    if @sticky.save!
       @sticky.creator_id = @user.id
+      @sticky.category_id = @board.categories.find_by(title: 'all').id
       @sticky.save!
-      redirect_to(sticky_path(@sticky))
-      # redirect(board_path(@board))
+      redirect_to(board_path(@board))
     else
       render(:new)
     end
@@ -27,7 +26,6 @@ class StickiesController < ApplicationController
 
   def show
     @sticky = Sticky.find(params[:id])
-    #modal
   end
 
   def edit
