@@ -20,7 +20,10 @@ class BoardsController < ApplicationController
     if @board.save! && current_user
       @board.creator_id = @user.id
       @board.save!
-        redirect_to(board_path(@board))
+      category = Category.create(title: "all")
+      @board.categories.push(category)
+      redirect_to(board_path(@board))
+
     else
       render(:new)
     end

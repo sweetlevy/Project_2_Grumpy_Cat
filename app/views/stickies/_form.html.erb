@@ -1,17 +1,18 @@
-<%= form_for @sticky, remote: true do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<%= form_for @sticky, :html => {:class => "new-sticky"}, remote: true  do |f| %>
+  <h3>New Sticky</h3>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <span><%= f.label :title %></span>
+  <span><%= f.text_field :title %></span>
 
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+  <span><%= f.label :content %></span>
+  <span><%= f.text_field :content %></span>
 
-  <%= f.hidden_field :board_id, value: board_id %>
+  <span><%= f.label :image_url %></span>
+  <span><%= f.text_field :image_url %></span>
 
-  <%= f.label :link_url %>
-  <%= f.text_field :link_url %>
+  <span><%= f.label :link_url %></span>
+  <span><%= f.text_field :link_url %></span>
+  <%= f.hidden_field :board_id, value: params[:board_id]%>
 
   <%= f.submit %>
 

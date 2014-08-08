@@ -24,6 +24,9 @@ $(document).ready(function() {
 
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
+  $('#board-nav').on('click', '.sticky-button', showModal );
+  $('#board-nav').on('click', '.category-button', showModal );
+  $('#board-nav').on('click', '.collaborator-button', showModal );
 
   $('#container').on('click', '.board-title',editTitle);
   $('body').on('keypress', '.edit-title',
@@ -36,7 +39,7 @@ $(document).ready(function() {
   );
 });
 
-function sortable() { console.log("hello");
+function sortable() {
   $("#sc1, #sc2, #sc3, #sc4").sortable({
     connectWith: ".sticky-container" }).disableSelection();
 }
@@ -76,6 +79,11 @@ function retractBoard() {
 
   var $span = $('.retract');
   $span.remove();
+  $('body').on('click', '.sticky-container', expandBoard);
+}
+
+function showModal() {
+  $('.modal').show();
 }
 
 function editTitle() {
@@ -106,6 +114,5 @@ function updateTitle() {
       // headerElement.remove();
       $('header .edit').replaceWith($('<h3 data-id=' + id + '> ' + newTitle + '</h3>'))
       console.log('done');
-    //   $('<h3>' + @board.title + '</h3>').appendTo($('#container header'));
     });
 }

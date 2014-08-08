@@ -3,28 +3,30 @@
   <h3 class="board-title" data-id=<%= @board.id %> ><%= @board.title %></h3>
   <span class="new-board">+ new board</span>
   <nav id="board-nav">
-    <span><%= link_to "+ new sticky", new_sticky_path, remote:true%></span>
-    <span><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
-    <span><%= link_to "+ new collaboration", users_search_path(:board_id => @board.id), remote:true%></span>
+    <span class="sticky-button"><%= link_to "+ new sticky", new_sticky_path(:board_id => @board.id), remote:true%></span>
+    <span class="category-button"><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
+    <span class="collaborator-button"><%= link_to "+ new collaborator", users_search_path(:board_id => @board.id), remote:true%></span>
     <span><%= link_to "- logout", logout_path%></span>
-
   </nav>
 </header>
+
     <% case board.categories.length %>
     <% when 1 %>
       <% board.categories.each do |category| %>
         <section id="sc1" class="one-full-board">
-          <h3 class="container-name">Stickies</h3>
-        <% category.stickies.each do |sticky| %>
-            <div class="sticky"><%= sticky.title %></div>
-        <% end %>
+          <h3 class="container-name"><%= category.title %></h3>
+            <div id="sc1" class="sticky-container">
+            <% category.stickies.each do |sticky| %>
+              <div class="sticky"><%= sticky.title %></div>
+            <% end %>
+          </div>
         </section>
       <% end %>
     <% when 2 %>
       <% board.categories.each do |category| %>
         <% if board.categories.find_index(category) == 0 %>
           <section class='top-left-board'>
-            <h3 class="container-name">Stickies</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc1" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -33,7 +35,7 @@
           </section>
         <% else %>
           <section class='top-right-board'>
-            <h3 class="container-name">Category Name</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc2" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -46,7 +48,7 @@
       <% board.categories.each do |category| %>
         <% if board.categories.find_index(category) == 0 %>
           <section class='left-half-board'>
-            <h3 class="container-name">Stickies</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc1" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -55,7 +57,7 @@
           </section>
         <% elsif board.categories.find_index(category) == 1 %>
           <section class='top-right-half-board'>
-            <h3 class="container-name">Category Name</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc2" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -64,7 +66,7 @@
           </section>
         <% else %>
           <section class='bottom-right-half-board'>
-            <h3 class="container-name">Category Name</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc4" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -77,7 +79,7 @@
       <% board.categories.each do |category| %>
         <% if board.categories.find_index(category) == 0 %>
           <div id='one'>
-            <h3 class="container-name">Stickies</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc1" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -86,7 +88,7 @@
           </div>
         <% elsif board.categories.find_index(category) == 1 %>
           <div id='two'>
-            <h3 class="container-name">Category Name</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc2" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -95,7 +97,7 @@
           </div>
         <% elsif board.categories.find_index(category) == 2 %>
           <div id='three'>
-            <h3 class="container-name">Category Name</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc3" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
@@ -104,7 +106,7 @@
           </div>
         <% else %>
           <div id='four'>
-            <h3 class="container-name">Category Name</h3>
+            <h3 class="container-name"><%= category.title %></h3>
             <div id="sc4" class="sticky-container">
             <% category.stickies.each do |sticky| %>
                 <div class="sticky"><%= sticky.title %></div>
