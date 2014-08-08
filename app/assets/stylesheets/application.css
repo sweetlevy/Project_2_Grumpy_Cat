@@ -481,11 +481,6 @@ header span {
   background-color: #fef315;
 }
 
-#search-div {
-  position: absolute;
-  right: 3.5em;
-  margin-top: 3em;
-
 /* modal for show sticky */
 .sticky-modal {
   position: fixed;
