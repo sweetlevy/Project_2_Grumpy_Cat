@@ -21,7 +21,7 @@ $(document).ready(function() {
   console.log('on it');
 
   sortable();
-
+// events listeners
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
 
@@ -42,13 +42,13 @@ $(document).ready(function() {
   $('board-nav').on('click', '.sticky-button', showModal );
 
 });
-
+// jquery drag, drop & sort stickits
 function sortable() {
   $("#sc1, #sc2, #sc3, #sc4").sortable({
     connectWith: ".sticky-container" }).disableSelection();
 }
 
-
+// expand board to see grouped stickits
 function expandBoard() {
   var $this = $(this);
   var $parent = $this.parent();
