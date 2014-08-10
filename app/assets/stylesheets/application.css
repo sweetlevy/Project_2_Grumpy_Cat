@@ -78,6 +78,67 @@
   letter-spacing: 2px;
 }
 
+
+#container .login {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5em;
+  text-align: center;
+}
+
+.login input {
+  width: 50%;
+  padding: .5em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  outline: 0;
+  border: 1px solid black;
+}
+
+.login ::-webkit-input-placeholder {
+ font-size: 1em;
+ color: black;
+ text-transform: uppercase;
+ font-weight: 700;
+}
+
+.login input[type="submit"] {
+  background-color: white;
+  text-transform: uppercase;
+  transition: all .5s ease;
+}
+.login input[type="submit"]:hover {
+  color: white;
+  background: black;
+}
+
+.login a {
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #ff610a;
+}
+
+.login a:hover {
+  padding-bottom: .5em;
+  border-bottom: 2px solid #ff610a;
+}
+
+.logo {
+  font-size: 7em;
+  margin-top: .5em;
+  text-align: center;
+}
+
+.logo #i {
+   color: #fe2194;
+}
+
+.logo #t {
+  color: #f2f106;
+}
+
+
 /* Styles particular to the two different headers across the site */
 
 header {
@@ -508,7 +569,7 @@ header span {
   left: 60%;
   margin: -1% 0 0 -25%;
   z-index: 50;
-  background-color: #fef315  ;
+  background-color: #fef315;
 }
 .sticky-content {
   margin: 0 auto;
@@ -526,34 +587,4 @@ header span {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.2;
-}
-
-div.new-sticky-modal {
-  width: 250px;
-  height: 250px;
-  background-color: #f1ea0c  ;
-}
-.new_sticky {
-  width: 100%;
-  padding: .5em 1em;
-  color: black;
-  background-color: #f1ea0c  ;
-}
-.new_sticky input {
-  width: 100%;
-  margin-bottom: 1em;
-  padding-bottom: .5em;
-  background-color: #f1ea0c  ;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-  font-size: 1.2em;
-  text-transform: uppercase;
-}
-.new_sticky textarea {
-  outline: none;
-  border: none;
-  resize: none;
-  background-color: #f1ea0c  ;
-  font-size: inherit;
 }
