@@ -16,7 +16,7 @@ class StickiesController < ApplicationController
     @sticky = Sticky.new(sticky_params)
     if @sticky.save!
       @sticky.creator_id = @user.id
-      @sticky.category_id = @board.categories.find_by(title: 'all').id
+      @sticky.category_id = @board.categories.find_by(title: 'ALL').id
       @sticky.save!
       redirect_to(board_path(@board))
     else

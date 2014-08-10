@@ -1,10 +1,8 @@
 var formHTML = $("<%= j(render 'form') %>");
 var modal = $('<div class="modal">');
-var modalContent = $('<div class="modal-content">');
 var container = $('#container');
 modal.empty();
-modalContent.empty();
-modalContent.append(formHTML);
-modal.append(modalContent);
+modal.empty();
+modal.append(formHTML);
 container.append(modal);
 showModal();
