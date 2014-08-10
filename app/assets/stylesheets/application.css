@@ -334,7 +334,6 @@ header span {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
-  =webkit-justify-content: space-around;
   -webkit-align-content: center;
   padding: 1em;
   padding-top: 4em;
@@ -347,6 +346,10 @@ header span {
   margin-bottom: 5px;
   text-align: center;
   padding-top: 1em;
+}
+.sticky:hover{
+  cursor: hand;
+  cursor: pointer;
 }
 .sticky p {
   background-color: #31fd2e;
