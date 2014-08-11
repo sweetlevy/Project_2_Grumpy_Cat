@@ -475,24 +475,42 @@ header span {
   font-size: 1.5em;
 }
 
-/* board view with three categories */
+/* board view with four categories */
 
-.left-half-board {
+.top-left-half-board {
   position: absolute;
   top: 0;
   left: 0;
   width: 50vw;
-  height: 100vh;
+  height: 50vh;
 }
-.left-half-board h3 {
+.top-left-half-board h3 {
   position: relative;
   top: 4em;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.2em;
 }
-.left-half-board p {
+.top-left-half-board p {
   background-color: #0dd5fc;
+  padding: .7em .4em;
+}
+.bottom-left-half-board {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  height: 50vh;
+}
+.bottom-left-half-board h3 {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.bottom-left-half-board p {
+  background-color: hotpink;
   padding: .7em .4em;
 }
 .top-right-half-board {
