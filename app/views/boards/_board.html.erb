@@ -13,7 +13,7 @@
   <% case board.categories.length %>
   <% when 1 %>
     <% board.categories.each do |category| %>
-      <section class="one-full-board">
+      <section class='top-left-board'>
         <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc1" class="sticky-container" data-id="<%= category.id %>">
           <% category.stickies.each do |sticky| %>
@@ -56,7 +56,7 @@
   <% when 3 %>
     <% board.categories.each do |category| %>
       <% if board.categories.find_index(category) == 0 %>
-        <section class='left-half-board'>
+        <section class='top-left-half-board'>
           <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc1" class="sticky-container">
           <% category.stickies.each do |sticky| %>
@@ -80,7 +80,7 @@
           </div>
         </section>
       <% else %>
-        <section class='bottom-right-half-board'>
+        <section class='bottom-left-half-board'>
           <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc4" class="sticky-container">
           <% category.stickies.each do |sticky| %>
