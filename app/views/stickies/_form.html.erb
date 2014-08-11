@@ -1,19 +1,11 @@
-<%= form_for @sticky, :html => {:class => "new-sticky"}, remote: true  do |f| %>
-  <h3>New Sticky</h3>
+<div class="new-sticky-modal">
+<%= form_for @sticky, remote: true  do |f| %>
 
-  <span><%= f.label :title %></span>
-  <span><%= f.text_field :title %></span>
+  <%= f.text_field :title, autofocus: true, placeholder: "TITLE" %>
 
-  <span><%= f.label :content %></span>
-  <span><%= f.text_field :content %></span>
-
-  <span><%= f.label :image_url %></span>
-  <span><%= f.text_field :image_url %></span>
-
-  <span><%= f.label :link_url %></span>
-  <span><%= f.text_field :link_url %></span>
-  <%= f.hidden_field :board_id, value: params[:board_id]%>
+  <%= f.text_area(:content, placeholder: "CONTENT", rows: 10) %>
 
   <%= f.submit %>
 
 <% end %>
+</div>

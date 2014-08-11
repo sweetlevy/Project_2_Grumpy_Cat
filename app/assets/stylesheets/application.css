@@ -41,32 +41,37 @@
   z-index: 10;
   display: none;
 }
-  .modal-content {
+ div.new-sticky-modal {
+  width: 250px;
+  height: 364px;
+  background-color: #f1ea0c;
   margin: 0 auto;
-  border: 1px solid black;
-  width: 300px;
-  border-radius: 5px;
-  background-color: white;
-  }
-  .new-sticky {
-  margin: 0 auto;
-  width: 95%;
-  padding: 1.5em;
-  }
-  .new-sticky input {
+}
+.new_sticky {
   width: 100%;
-  margin-bottom: 2em;
-  }
-  .new-stick textarea {
+  padding: .5em 1em;
+  color: black;
+  background-color: #f1ea0c;
+}
+.new_sticky #sticky_title {
   width: 100%;
-  }
-  .new-sticky h3 {
-  text-align: center;
-  margin-bottom: 1.5em;
-  }
-  .new-sticky span {
-  display: block;
-  }
+  margin-bottom: 1em;
+  padding-bottom: .5em;
+  background-color: #f1ea0c;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.new_sticky textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #f1ea0c;
+  font-size: inherit;
+}
+
   body {
   font-family: 'PT Sans';
   font-weight: 700;
@@ -329,7 +334,6 @@ header span {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
-  =webkit-justify-content: space-around;
   -webkit-align-content: center;
   padding: 1em;
   padding-top: 4em;
@@ -342,6 +346,10 @@ header span {
   margin-bottom: 5px;
   text-align: center;
   padding-top: 1em;
+}
+.sticky:hover{
+  cursor: hand;
+  cursor: pointer;
 }
 .sticky p {
   background-color: #31fd2e;
@@ -596,5 +604,3 @@ header span {
   font-weight: 700;
   line-height: 1.2;
 }
-
-/* login form */
