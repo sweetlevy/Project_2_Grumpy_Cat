@@ -39,7 +39,8 @@ class StickiesController < ApplicationController
     if @sticky.update(sticky_params)
       @sticky.creator_id = @user.id
       @sticky.save
-      redirect_to(sticky_path(@sticky))
+      # redirect_to(sticky_path(@sticky))
+      render JSON: :sticky
     else
       render(:edit)
     end
@@ -51,7 +52,7 @@ class StickiesController < ApplicationController
 
   private
   def sticky_params
-    params.require(:sticky).permit(:title, :content)
+    params.require(:sticky).permit(:title, :content, :category_id)
   end
 
 

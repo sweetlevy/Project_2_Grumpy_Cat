@@ -41,14 +41,17 @@ $(document).ready(function() {
 
   $('board-nav').on('click', '.sticky-button', showModal );
 
+
 });
 // jquery drag, drop & sort stickits
 function sortable() {
   $("#sc1, #sc2, #sc3, #sc4").sortable({
-    connectWith: ".sticky-container" }).disableSelection();
+    connectWith: ".sticky-container" }, {
+    receive: categoryUpdate})
 }
 
 // expand board to see grouped stickits
+
 function expandBoard() {
   var $this = $(this);
   var $parent = $this.parent();
@@ -140,4 +143,22 @@ function updateTitle() {
       $('header .edit').replaceWith($('<h3 data-id=' + id + '> ' + newTitle + '</h3>'))
       console.log('done');
     });
+}
+
+function categoryUpdate () {
+  var element = $(this).children().last();
+  // console.log(element);
+  // var stickyId = $(this).children().eq(0).data("id");
+  var stickyId = element.children().eq(0).data("id");
+  // var categoryId = $(this).parent().siblings().eq(0).data("id");
+  var categoryId = element.parent().siblings().data("id");
+  var params = {
+    sticky: {
+      category_id: categoryId
+    }
+  };
+  // console.log(categoryId);
+  // console.log(stickyId);
+  $.ajax('/stickies/' + stickyId, { type: "PUT", data: params });
+
 }
