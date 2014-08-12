@@ -21,7 +21,7 @@ $(document).ready(function() {
   console.log('on it');
 
   sortable();
-// events listeners
+
   $('body').on('click', '.sticky-container', expandBoard);
   $('body').on('click', '.retract', retractBoard);
 
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 
 });
-// jquery drag, drop & sort stickits
+
 function sortable() {
   $("#sc1, #sc2, #sc3, #sc4").sortable({
     connectWith: ".sticky-container" }, {
@@ -55,8 +55,6 @@ function sortable() {
     }
   });
 }
-
-// expand board to see grouped stickits
 
 function expandBoard() {
   var $this = $(this);
@@ -158,8 +156,5 @@ function categoryUpdate (stickyId, categoryId) {
       category_id: categoryId
     }
   };
-  console.log(categoryId);
-  console.log(stickyId);
   $.ajax('/stickies/' + stickyId, { type: "PUT", data: params });
-
 }

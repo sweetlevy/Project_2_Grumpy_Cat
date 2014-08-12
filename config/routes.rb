@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :users
   resources :collaborations, except: [:index, :edit, :update, :show]
   resources :stickies
+  # post '/stickies/' => 'stickies#create', as: :create
   resources :boards
   resources :categories
 

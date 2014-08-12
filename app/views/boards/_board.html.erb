@@ -1,4 +1,4 @@
-<header>
+  <header>
   <h2><%= link_to @user.username, users_profiles_path(@user), remote: true %></h2>
   <h3 class="board-title" data-id=<%= @board.id %> ><%= @board.title %></h3>
   <span class="new-board">+ new board</span>

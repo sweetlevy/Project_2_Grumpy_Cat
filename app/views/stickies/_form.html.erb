@@ -5,6 +5,8 @@
 
   <%= f.text_area(:content, placeholder: "CONTENT", rows: 10) %>
 
+  <%= f.hidden_field :board_id, value: params[:board_id]  %>
+
   <%= f.submit %>
 
 <% end %>
