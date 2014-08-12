@@ -87,7 +87,7 @@ function retractBoard() {
     $containerDiv.css({width: '50vw', height: '50vh', left: ''});
 
   } else if ($idValue == "sc3") {
-    $containerDiv.css({width: '50vw', height: '50vh', right: ''});
+    $containerDiv.css({width: '50vw', height: '50vh', left: ''});
 
   } else {
     $containerDiv.css({width: '50vw', height: '50vh', top: '', left: ''});
