@@ -185,6 +185,19 @@ header nav {
 header span {
   font-size: .8em;
 }
+header input  {
+  position: absolute;
+  margin: 0;
+  padding: 0 10px;
+  height: 2em;
+  top: 0px;
+  right: 35px;
+  outline: none;
+  border: 2px solid black;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 .new-board {
   position: absolute;
   top: 10px;
@@ -193,6 +206,18 @@ header span {
   font-weight: 400;
   text-align: left;
   color: #ff610a;
+}
+.user {
+  position: relative;
+}
+
+.user-search-results{
+  position: relative;
+  width: 300px;
+}
+.user-search-results span {
+  font-size: .8em;
+  padding-bottom: 5px;
 }
 .user-info-nav {
   text-align: right;
