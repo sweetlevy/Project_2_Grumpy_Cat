@@ -21,25 +21,6 @@ collab1= Collaboration.create(user_id: sarit.id, board_id: board1.id)
 collab2= Collaboration.create(user_id: sarit.id, board_id: board2.id)
 collab3= Collaboration.create(user_id: sarit.id, board_id: board3.id)
 
-category1 = Category.create({title: "Pain Points", board_id: board1.id})
-category2 = Category.create({title: "Enjoyable", board_id: board1.id})
-category3 = Category.create({title: "Themes", board_id: board1.id})
-category4 = Category.create({title: "Types", board_id: board1.id})
-category5 = Category.create({title: "To-Do", board_id: board2.id})
-category6 = Category.create({title: "In Progess", board_id: board2.id})
-category7 = Category.create({title: "Testing", board_id: board2.id})
-category8 = Category.create({title: "Done", board_id: board3.id})
-category9 = Category.create({title: "Whatever", board_id: board3.id})
-category10 = Category.create({title: "Research", board_id: board3.id})
-category11 = Category.create({title: "Presentation", board_id: board4.id})
-category12 = Category.create({title: "Case Study", board_id: board4.id})
-
-  # board1.categories << category1 << category2 << category3 << category4
-  # board2.categories << category5 << category6 << category7
-  # board3.categories << category8 << category9 << category10
-  # board4.categories << category11 << category12
-
-
 sticky1 = Sticky.create({title: "Age" , content: "28", category_id: category1.id})
 sticky2 = Sticky.create({title: "Name", content: "Greg", category_id: category1.id})
 sticky3 = Sticky.create({title: "Race", content: "Caucasian", category_id: category1.id})

@@ -7,7 +7,7 @@ class StickiesController < ApplicationController
   def new
     @user = current_user
     @sticky = Sticky.new
-    @board = Board.find(params  [:board_id])
+    @board = Board.find(params[:board_id])
   end
 
   def create
