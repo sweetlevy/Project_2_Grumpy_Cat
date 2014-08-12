@@ -15,14 +15,14 @@
       <div class="collab">
       <span>Title: </span>
       <span><%= link_to collaboration.board.title, board_path(collaboration.board), remote: true %></span> |
-      <span><%= link_to 'Delete Board', board_path(collaboration.board), remote: true, method: :delete %></span>
+      <span><%= link_to 'Delete Board', board_path(board), remote: true, method: :delete %></span>
       </div>
     <% end %>
   </div>
   <div class="user-boards">
       <h3>My Boards</h3>
       <% user.created_boards.each do |board| %>
-      <div class="my-boards">
+      <div class="my-boards" id="<%= dom_id(board) %>">
       <span>Title: </span>
       <span><%= link_to board.title, board_path(board), remote: true  %></span> |
       <span><%= link_to 'Delete Board', board_path(board), remote: true, method: :delete %></span>
