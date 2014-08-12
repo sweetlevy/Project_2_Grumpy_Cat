@@ -47,7 +47,13 @@ $(document).ready(function() {
 function sortable() {
   $("#sc1, #sc2, #sc3, #sc4").sortable({
     connectWith: ".sticky-container" }, {
-    receive: categoryUpdate})
+    receive: function(event, ui) {
+      var element = $(ui.item.context);
+      var stickyId = element.eq(0).children().data("id");
+      var categoryId = element.parent().siblings().data("id");
+      categoryUpdate(stickyId, categoryId);
+    }
+  });
 }
 
 function expandBoard() {
@@ -143,20 +149,15 @@ function updateTitle() {
     });
 }
 
-function categoryUpdate () {
-  var element = $(this).children().last();
-  // console.log(element);
-  // var stickyId = $(this).children().eq(0).data("id");
-  var stickyId = element.children().eq(0).data("id");
-  // var categoryId = $(this).parent().siblings().eq(0).data("id");
-  var categoryId = element.parent().siblings().data("id");
+function categoryUpdate (stickyId, categoryId) {
+
   var params = {
     sticky: {
       category_id: categoryId
     }
   };
-  // console.log(categoryId);
-  // console.log(stickyId);
+  console.log(categoryId);
+  console.log(stickyId);
   $.ajax('/stickies/' + stickyId, { type: "PUT", data: params });
 
 }
