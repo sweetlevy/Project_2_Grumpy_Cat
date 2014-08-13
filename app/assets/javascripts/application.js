@@ -52,7 +52,13 @@ $(document).ready(function() {
   );
 
   $('board-nav').on('click', '.sticky-button', showModal );
-
+  $('#container').on('click', '.delete-button',
+    function() {
+      var id = $(this).data("id");
+      console.log(id);
+      $.ajax('/categories/' + id, { type: "DELETE"});
+    }
+  );
 
 });
 
@@ -180,9 +186,10 @@ function editCategory() {
   var id = categoryH3.data('id');
   var editSpan = $('<span class="edit">');
   var editInput = $('<input type="text" class="edit-category"' +  'data-id=' + id + '>');
-
+  var deleteButton = $('<button class="delete-button"' +  'data-id=' + id + '>-</button>')
   editInput.val(categoryH3.text());
   editSpan.append(editInput);
+  editSpan.append(deleteButton);
   categoryH3.parent().children('h3').replaceWith(editSpan);
   // categoryH3.parent().children('h3').replaceWith(editSpan);
   $('#container').off('click', '.edit-category');
@@ -206,13 +213,13 @@ function updateCategory() {
       $('body').on('click', '.sticky-container', expandBoard);
     });
 }
+// change sticky category
+function categoryUpdate (stickyId, categoryId) {
 
-// function categoryUpdate (stickyId, categoryId) {
-//
-//   var params = {
-//     sticky: {
-//       category_id: categoryId
-//     }
-//   };
-//   $.ajax('/stickies/' + stickyId, { type: "PUT", data: params });
-// }
+  var params = {
+    sticky: {
+      category_id: categoryId
+    }
+  };
+  $.ajax('/stickies/' + stickyId, { type: "PUT", data: params });
+}
