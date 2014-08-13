@@ -174,7 +174,7 @@ header .edit {
   outline: 0;
 }
 span.edit {
-  position: absolute;
+  position: relative;
   bottom: 40em;
   left: 30em;
   outline: 0;
