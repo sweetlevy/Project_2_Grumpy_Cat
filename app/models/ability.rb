@@ -10,8 +10,14 @@ class Ability
     can :update, Sticky do |sticky|
       user == sticky.creator
     end
+    can :update, Category do |category|
+      user == category.board.creator
+    end
     can :destroy, Board do |board|
       user == board.creator
+    end
+    can :destroy, Category do |category|
+      user == category.board.creator
     end
     can :destroy, Sticky do |sticky|
       user == sticky.creator

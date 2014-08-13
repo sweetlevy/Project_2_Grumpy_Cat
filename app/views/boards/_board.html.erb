@@ -14,7 +14,7 @@
   <% when 1 %>
     <% board.categories.each do |category| %>
       <section class='top-left-board'>
-        <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+        <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc1" class="sticky-container" data-id="<%= category.id %>">
           <% category.stickies.each do |sticky| %>
             <div class="sticky">
@@ -29,7 +29,7 @@
     <% board.categories.each do |category| %>
       <% if board.categories.find_index(category) == 0 %>
         <section class='top-left-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc1" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -41,7 +41,7 @@
         </section>
       <% else %>
         <section class='top-right-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc2" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -57,7 +57,7 @@
     <% board.categories.each do |category| %>
       <% if board.categories.find_index(category) == 0 %>
         <section class='top-left-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc1" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -69,7 +69,7 @@
         </section>
       <% elsif board.categories.find_index(category) == 1 %>
         <section class='top-right-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc2" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -81,7 +81,7 @@
         </section>
       <% else %>
         <section class='bottom-left-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc4" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -97,7 +97,7 @@
     <% board.categories.each do |category| %>
       <% if board.categories.find_index(category) == 0 %>
         <section class='top-left-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc1" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -110,7 +110,7 @@
         </section>
       <% elsif board.categories.find_index(category) == 1 %>
         <section class='bottom-left-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc2" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -123,7 +123,7 @@
         </section>
       <% elsif board.categories.find_index(category) == 2 %>
         <section class='top-right-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc3" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">
@@ -136,7 +136,7 @@
         </section>
       <% else %>
         <section class='bottom-right-half-board'>
-          <h3 class="container-name" data-id="<%= category.id %>"><%= category.title %></h3>
+          <h3 class="container-name category-title" data-id="<%= category.id %>"><%= category.title %></h3>
           <div id="sc4" class="sticky-container">
           <% category.stickies.each do |sticky| %>
               <div class="sticky">

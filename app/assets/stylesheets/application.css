@@ -173,6 +173,12 @@ header .edit {
   left: 25em;
   outline: 0;
 }
+span.edit {
+  position: absolute;
+  bottom: 40em;
+  left: 30em;
+  outline: 0;
+}
 header nav {
   position: absolute;
   top: 10px;
