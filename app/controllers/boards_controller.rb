@@ -55,7 +55,6 @@ class BoardsController < ApplicationController
     @user = current_user
     # @board = Board.find(params[:id])
     @board.destroy
-    render action: @user
   end
 
   private
