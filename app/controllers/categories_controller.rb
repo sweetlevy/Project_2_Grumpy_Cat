@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate
+  load_and_authorize_resource
 
   def index
   end
@@ -26,10 +28,18 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    @user = current_user
+    if @category.update(category_params)
+
+      render json: @board
+    else
+      render(:edit)
+    end
   end
 
-  def delete
-    @board = Category.find(params[:id])
+  def destroy
+    # @category = Category.find(params[:id])
+    @category.destroy
   end
 
   private

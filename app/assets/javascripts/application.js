@@ -29,18 +29,36 @@ $(document).ready(function() {
   $('#board-nav').on('click', '.category-button', showModal );
   $('#board-nav').on('click', '.collaborator-button', showModal );
 
+  // update title
   $('#container').on('click', '.board-title',editTitle);
   $('body').on('keypress', '.edit-title',
-     function(event) {
+    function(event) {
       var theActualInputBox = this;
       if (event.which === 13) {
         updateTitle.call(theActualInputBox);
+      }
+    }
+  );
+
+  // update category
+  $('#container').on('click', '.category-title',editCategory);
+  $('body').on('keypress', '.edit-category',
+     function(event) {
+      var theActualInputBox = this;
+      if (event.which === 13) {
+        updateCategory.call(theActualInputBox);
       }
       }
   );
 
   $('board-nav').on('click', '.sticky-button', showModal );
-
+  $('#container').on('click', '.delete-button',
+    function() {
+      var id = $(this).data("id");
+      console.log(id);
+      $.ajax('/categories/' + id, { type: "DELETE"});
+    }
+  );
 
 });
 
@@ -87,7 +105,7 @@ function retractBoard() {
     $containerDiv.css({width: '50vw', height: '50vh', left: ''});
 
   } else if ($idValue == "sc3") {
-    $containerDiv.css({width: '50vw', height: '50vh', right: ''});
+    $containerDiv.css({width: '50vw', height: '50vh', left: ''});
 
   } else {
     $containerDiv.css({width: '50vw', height: '50vh', top: '', left: ''});
@@ -149,6 +167,53 @@ function updateTitle() {
     });
 }
 
+// function editCategory() {
+//   var categoryH3 = $(this);
+//   var id = categoryH3.data('id');
+//     var editH3 = categoryH3 ;
+//     var editInput = $('<input type="text" class="edit-category"' +  'data-id=' + id + '>');
+//
+//   editInput.val(categoryH3.text());
+//
+//   editH3.prepend(editInput);
+//
+//   categoryH3.replaceWith(editH3);
+//   $('#container').on('click', '.edit-category',editCategory);
+// }
+function editCategory() {
+  $('body').off('click', '.sticky-container');
+  var categoryH3 = $(this);
+  var id = categoryH3.data('id');
+  var editSpan = $('<span class="edit">');
+  var editInput = $('<input type="text" class="edit-category"' +  'data-id=' + id + '>');
+  var deleteButton = $('<button class="delete-button"' +  'data-id=' + id + '>-</button>')
+  editInput.val(categoryH3.text());
+  editSpan.append(editInput);
+  editSpan.append(deleteButton);
+  categoryH3.parent().children('h3').replaceWith(editSpan);
+  // categoryH3.parent().children('h3').replaceWith(editSpan);
+  $('#container').off('click', '.edit-category');
+}
+
+
+function updateCategory() {
+  var categoryElement = $(this);
+  // console.log(categoryElement);
+  var id = categoryElement.data('id');
+  var newTitle = categoryElement.val();
+  var params = {
+    category: {
+      title: newTitle
+    }
+  };
+  $.ajax('/categories/' + id, { type: "PUT", data: params })
+    .done(function(category) {
+      categoryElement.parent().replaceWith($('<h3  class="container-name edit-category" data-id=' + id + '> ' + newTitle + '</h3>'))
+      console.log('done');
+      $('body').on('click', '.sticky-container', expandBoard);
+    });
+}
+// change sticky category
 function categoryUpdate (stickyId, categoryId) {
 
   var params = {
