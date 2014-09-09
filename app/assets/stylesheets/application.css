@@ -160,7 +160,7 @@ header a {
   color: black;
 }
 header h2 {
-  position: absolute;
+  display: inline-block;
   top: 10px;
   margin-left: .5em;
   text_align: left;
@@ -192,7 +192,7 @@ header span {
   font-size: .8em;
 }
 .new-board {
-  position: absolute;
+  display: inline-block;
   top: 10px;
   left: 8em;
   font-size: 1em;
@@ -205,6 +205,9 @@ header span {
   font-size: .8em;
   margin-right: 2em;
   margin-top: .1em;
+  position: absolute;
+  top: 14px;
+  right: 30px;
 }
 
 /* Container div in the layout html */
@@ -609,4 +612,13 @@ header span {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.2;
+}
+#new-board-form {
+  margin-top: 10em;
+  text-align: center;
+}
+
+.new-board-form-title {
+  margin-bottom: 1em;
+  font-size: 2em;
 }
