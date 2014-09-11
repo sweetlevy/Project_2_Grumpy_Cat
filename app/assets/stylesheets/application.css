@@ -174,9 +174,9 @@ header .edit {
   outline: 0;
 }
 span.edit {
-  position: relative;
-  bottom: 40em;
-  left: 30em;
+  position: absolute;
+  top: 4.5em;
+  right: 250px;
   outline: 0;
 }
 header nav {
