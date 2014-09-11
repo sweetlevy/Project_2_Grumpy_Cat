@@ -1,6 +1,8 @@
-<%= form_for @board, remote: true   do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-
-<% end %>
+<div id='new-board-form'>
+  <h3 class='new-board-form-title'>Create a New Board</h3>
+  <%= form_for @board, remote: true   do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+  <% end %>
+</div>

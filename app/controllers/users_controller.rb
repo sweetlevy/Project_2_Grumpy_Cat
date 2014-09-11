@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authorize, only: [:edit, :update, :destroy]
+  #before_action :authorize, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @collaboration = Collaboration.new
     @user = current_user
     @user_search = User.where("LOWER(name) LIKE '%#{params[:search].downcase}%'")
-  
+
   end
 
   def profile

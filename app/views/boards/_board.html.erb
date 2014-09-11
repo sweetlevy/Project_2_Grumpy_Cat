@@ -1,7 +1,7 @@
   <header>
   <h2><%= link_to @user.username, users_profiles_path(@user), remote: true %></h2>
+  <div class="new-board">+ new board</div>
   <h3 class="board-title" data-id=<%= @board.id %> ><%= @board.title %></h3>
-  <span class="new-board">+ new board</span>
   <nav id="board-nav">
     <span class="sticky-button"><%= link_to "+ new sticky", new_sticky_path(:board_id => @board.id), remote:true%></span>
     <span class="category-button"><%= link_to "+ new category", new_category_path(:board_id => @board.id), remote:true %></span>
